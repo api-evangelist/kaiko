@@ -2,8 +2,6 @@ aid: kaiko
 url: https://raw.githubusercontent.com/api-evangelist/kaiko/refs/heads/main/apis.yml
 name: Kaiko
 x-type: company
-description: >-
-  Kaiko is an institutional-grade crypto market data provider offering real-time and historical trade data, derivatives, FX, and benchmark indices via REST and WebSocket.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Web3
@@ -11,13 +9,112 @@ tags:
   - Market Data
   - Institutional
   - FX
+  - Indices
+  - On-Chain
+  - Streaming
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+description: >-
+  Kaiko is an institutional-grade crypto market data provider. Its product line spans Kaiko REST
+  (historical and reference data), Kaiko Stream (real-time WebSocket and gRPC), Cloud Delivery
+  (S3 and Snowflake direct shares), Kaiko On-chain, and Kaiko Indices (regulated benchmark
+  indices). Authentication uses API keys; access is sales-led.
+apis:
+  - aid: kaiko:rest-api
+    name: Kaiko REST API
+    tags:
+      - Crypto
+      - Market Data
+      - Reference Data
+      - Historical
+      - Institutional
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://us.market-api.kaiko.io/v2
+    humanURL: https://docs.kaiko.com/
+    description: >-
+      REST endpoints for trades, order books, OHLCV, market reference, trade flows, FX rates,
+      and derivatives across 100+ exchanges. Historical depth back to 2014. Authentication via
+      X-Api-Key header.
+    properties:
+      - type: Documentation
+        url: https://docs.kaiko.com/
+    x-features:
+      - Trades, OHLCV, order books
+      - 100+ exchanges
+      - History back to 2014
+      - Cross-region endpoints (US, EU)
+    x-use-cases:
+      - Institutional trading research
+      - Compliance and surveillance
+      - NAV calculation for crypto funds
+  - aid: kaiko:stream
+    name: Kaiko Stream
+    tags:
+      - Streaming
+      - Real-time
+      - WebSocket
+      - gRPC
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: wss://stream.kaiko.com
+    humanURL: https://docs.kaiko.com/stream/overview
+    description: Real-time crypto market data over WebSocket and gRPC for trades, order book updates, and market events.
+    properties:
+      - type: Documentation
+        url: https://docs.kaiko.com/stream/overview
+    x-features:
+      - WebSocket and gRPC streaming
+      - Trade and order-book events
+      - Multi-region availability
+    x-use-cases:
+      - Live trading systems
+      - Latency-sensitive analytics
+  - aid: kaiko:on-chain-api
+    name: Kaiko On-chain API
+    tags:
+      - On-Chain
+      - DEX
+      - Liquidity
+      - Multi-chain
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://us.market-api.kaiko.io/v2/data/onchain
+    humanURL: https://docs.kaiko.com/onchain/overview
+    description: On-chain metrics including DEX trades, liquidity, lending markets, and MEV signals across major chains.
+    properties:
+      - type: Documentation
+        url: https://docs.kaiko.com/onchain/overview
+    x-features:
+      - DEX trade and liquidity data
+      - Lending market metrics
+      - MEV signals
+    x-use-cases:
+      - Cross-CEX/DEX research
+      - DeFi compliance
+  - aid: kaiko:indices
+    name: Kaiko Indices
+    tags:
+      - Indices
+      - Benchmark
+      - Regulated
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://us.market-api.kaiko.io/v2/data/index.v1
+    humanURL: https://www.kaiko.com/products/indices
+    description: Regulated benchmark crypto indices designed for fund administrators and ETF/ETP issuers.
+    properties:
+      - type: Documentation
+        url: https://www.kaiko.com/products/indices
+    x-features:
+      - Regulated benchmarks
+      - Single-asset and basket indices
+      - Fixings for NAV
+    x-use-cases:
+      - Crypto ETF/ETP NAV
+      - Fund administrator NAV
 common:
-  - type: Website
+  - type: Portal
     url: https://www.kaiko.com/
+  - type: Documentation
+    url: https://docs.kaiko.com/
   - type: Plans
     url: plans/kaiko-plans-pricing.yml
   - type: RateLimits
