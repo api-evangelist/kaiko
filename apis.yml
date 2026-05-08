@@ -1,0 +1,29 @@
+aid: kaiko
+url: https://raw.githubusercontent.com/api-evangelist/kaiko/refs/heads/main/apis.yml
+name: Kaiko
+x-type: company
+description: >-
+  Kaiko is an institutional-grade crypto market data provider offering real-time and historical trade data, derivatives, FX, and benchmark indices via REST and WebSocket.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Web3
+  - Crypto
+  - Market Data
+  - Institutional
+  - FX
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://www.kaiko.com/
+  - type: Plans
+    url: plans/kaiko-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/kaiko-rate-limits.yml
+  - type: FinOps
+    url: finops/kaiko-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
