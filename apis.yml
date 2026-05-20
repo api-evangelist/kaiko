@@ -111,6 +111,10 @@ apis:
       - Crypto ETF/ETP NAV
       - Fund administrator NAV
 common:
+  - type: GitHubOrganization
+    url: https://github.com/kaikodata
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/kaikodata
   - type: Portal
     url: https://www.kaiko.com/
   - type: Documentation
