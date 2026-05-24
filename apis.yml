@@ -125,6 +125,8 @@ common:
     url: rate-limits/kaiko-rate-limits.yml
   - type: FinOps
     url: finops/kaiko-finops.yml
+  - type: LLMsTxt
+    url: https://docs.kaiko.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
