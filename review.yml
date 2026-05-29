@@ -1,0 +1,56 @@
+aid: kaiko:review
+name: Kaiko Streaming Surface Review
+kind: review
+created: '2026-05-29'
+modified: '2026-05-29'
+reviewer: API Evangelist (Kin Lane)
+subject: Kaiko Stream — real-time streaming protocols
+sources:
+  - https://docs.kaiko.com/stream/general/introduction.md
+  - https://docs.kaiko.com/stream/general/quick-start-guides.md
+  - https://docs.kaiko.com/stream/general/quick-start-guides/quick-start-python.md
+  - https://docs.kaiko.com/stream/general/quick-start-guides/quick-start-curl.md
+  - https://docs.kaiko.com/stream/data-feeds/introduction.md
+  - https://github.com/kaikodata/kaiko-sdk-examples
+  - https://sdk-documentation.kaiko.ovh
+findings:
+  - id: stream-transport
+    summary: >-
+      Kaiko Stream is delivered exclusively over gRPC streaming. The Kaiko Stream
+      introduction explicitly states gRPC as the transport ("gRPC technology for the
+      best data delivery and uptime"), the Python quick-start lists "gRPC streaming"
+      as a system requirement, and the kaiko-sdk-examples repo describes Kaiko SDK as
+      "leveraging gRPC Protocol and its capabilities." The SDK service protos
+      (StreamTradesServiceV1, StreamAggregatedPriceServiceV1, StreamMarketUpdateServiceV1,
+      etc.) are gRPC server-streaming Subscribe methods.
+  - id: websocket-not-offered
+    summary: >-
+      No public Kaiko documentation page surfaced a WebSocket (ws:// or wss://) endpoint,
+      subscription envelope, or channel definition for Kaiko Stream. There is no
+      wss://stream.kaiko.com host documented. The previous apis.yml entry claiming a
+      WebSocket transport with baseURL wss://stream.kaiko.com was inaccurate and has
+      been corrected.
+  - id: kafka-delivery
+    summary: >-
+      Kaiko also offers Cloud Delivery (S3, Snowflake direct shares) and Kafka-style
+      managed delivery for some products, but those are out-of-band batch / managed
+      pipelines, not a public WebSocket API.
+  - id: rest-surface
+    summary: >-
+      Real-time-ish polling, historical data, reference data, indices, and on-chain
+      data are exposed over the Kaiko REST API (us.market-api.kaiko.io / eu.market-api.kaiko.io)
+      with X-Api-Key auth. REST is documented separately in openapi/kaiko-openapi.yml.
+decision:
+  asyncapi: false
+  reason: >-
+    Kaiko does not expose a documented WebSocket interface. Its real-time streaming
+    surface is gRPC, which is out of scope for AsyncAPI 2.6 (AsyncAPI 2.6 has no
+    first-class binding for gRPC server-streaming Subscribe RPCs the way it does for
+    Kafka, MQTT, AMQP, or WebSocket). A gRPC contract is better expressed as the
+    existing .proto files in github.com/kaikodata/kaiko-sdk. No asyncapi/kaiko-asyncapi.yml
+    will be added at this time.
+  followups:
+    - Track Kaiko releases for any future WebSocket gateway (some vendors expose a
+      WS bridge for browser clients) and revisit AsyncAPI then.
+    - If Kaiko publishes a public Kafka delivery topology, evaluate an AsyncAPI 2.6
+      spec with the kafka binding for the relevant topics.

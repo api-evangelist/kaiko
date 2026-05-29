@@ -13,7 +13,7 @@ tags:
   - On-Chain
   - Streaming
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-05-29'
 specificationVersion: '0.19'
 description: >-
   Kaiko is an institutional-grade crypto market data provider. Its product line spans Kaiko REST
@@ -53,22 +53,31 @@ apis:
     tags:
       - Streaming
       - Real-time
-      - WebSocket
       - gRPC
     image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    baseURL: wss://stream.kaiko.com
-    humanURL: https://docs.kaiko.com/stream/overview
-    description: Real-time crypto market data over WebSocket and gRPC for trades, order book updates, and market events.
+    humanURL: https://docs.kaiko.com/stream/general/introduction
+    description: >-
+      Real-time crypto market data delivered over gRPC server-streaming. Feeds include
+      tick-level trades, top-of-book (best bid/ask), level-2 order book updates,
+      level-1 aggregations (OHLCV, VWAP), derivatives reference data, and analytics
+      (Best Execution, Fair Market Value, Derivatives Risk Indicators). Transport is
+      gRPC only; Kaiko does not publish a WebSocket interface (see review.yml).
     properties:
       - type: Documentation
-        url: https://docs.kaiko.com/stream/overview
+        url: https://docs.kaiko.com/stream/general/introduction
+      - type: SDK
+        url: https://github.com/kaikodata/kaiko-sdk-examples
+      - type: Review
+        url: review.yml
     x-features:
-      - WebSocket and gRPC streaming
-      - Trade and order-book events
-      - Multi-region availability
+      - gRPC server-streaming Subscribe RPCs
+      - Trade, top-of-book, level-2, OHLCV, VWAP feeds
+      - Derivatives reference data and risk indicators
+      - SDKs in Python, Go, Java, Node, C++, C#, Rust, Scala
     x-use-cases:
       - Live trading systems
       - Latency-sensitive analytics
+      - Fair market value and best execution
   - aid: kaiko:on-chain-api
     name: Kaiko On-chain API
     tags:
@@ -127,6 +136,8 @@ common:
     url: finops/kaiko-finops.yml
   - type: LLMsTxt
     url: https://docs.kaiko.com/llms.txt
+  - type: Review
+    url: review.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
