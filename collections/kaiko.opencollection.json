@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kaiko Market Data REST API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Api-Key",
+      "value": "{{X-Api-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Canton Oracle",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Canton oracle BTC-USD price",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.market-api.kaiko.io/v2/data/canton/oracle/price/btc-usd"
+          },
+          "docs": "Return the current Canton oracle price for the BTC-USD pair."
+        },
+        {
+          "info": {
+            "name": "Get Canton oracle BTC-USD BRR",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.market-api.kaiko.io/v2/data/canton/oracle/brr/btc-usd"
+          },
+          "docs": "Return the current Canton oracle BRR (Benchmark Reference Rate) for BTC-USD."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Index Reference Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get index reference rates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.market-api.kaiko.io/v2/data/index_reference_data.v1/rates"
+          },
+          "docs": "Return reference-rate data for Kaiko indices."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Indices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get digital asset index composition",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.market-api.kaiko.io/v2/data/index.v1/digital_asset_rates_compo"
+          },
+          "docs": "Return index composition data for Kaiko's digital-asset rate indices."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Supply",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get top market-cap rankings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.market-api.kaiko.io/v2/data/supply.v2/top"
+          },
+          "docs": "Return market-capitalization rankings for top assets."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

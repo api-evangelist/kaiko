@@ -1,0 +1,500 @@
+{
+  "item": [
+    {
+      "id": "0a3bb773-df6f-4536-8071-91fa7b96ba16",
+      "name": "Canton Oracle",
+      "description": {
+        "content": "Canton oracle pricing endpoints.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7bdc531e-3ac2-4f12-bbaf-e309add10462",
+          "name": "Get Canton oracle BTC-USD price",
+          "request": {
+            "name": "Get Canton oracle BTC-USD price",
+            "description": {
+              "content": "Return the current Canton oracle price for the BTC-USD pair.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "canton",
+                "oracle",
+                "price",
+                "btc-usd"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fe31a477-ff37-491c-bdb1-59ec9fe34024",
+              "name": "Canton oracle price payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "canton",
+                    "oracle",
+                    "price",
+                    "btc-usd"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "de66f2a2-8d40-4a52-95e0-1126a4cf747f",
+          "name": "Get Canton oracle BTC-USD BRR",
+          "request": {
+            "name": "Get Canton oracle BTC-USD BRR",
+            "description": {
+              "content": "Return the current Canton oracle BRR (Benchmark Reference Rate) for BTC-USD.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "canton",
+                "oracle",
+                "brr",
+                "btc-usd"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2b7f2dfe-ab30-4257-a669-4f41d9434802",
+              "name": "Canton oracle BRR payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "canton",
+                    "oracle",
+                    "brr",
+                    "btc-usd"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "17ccf0f4-8888-4368-bf3d-be8f2a127289",
+      "name": "Index Reference Data",
+      "description": {
+        "content": "Reference-rate data for Kaiko indices.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "64460bec-8754-4ece-ac91-f7ce75806e24",
+          "name": "Get index reference rates",
+          "request": {
+            "name": "Get index reference rates",
+            "description": {
+              "content": "Return reference-rate data for Kaiko indices.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "index_reference_data.v1",
+                "rates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "215a93f4-8d12-4e20-86f5-a937f3a7c299",
+              "name": "Reference-rate payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "index_reference_data.v1",
+                    "rates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "79238efc-8a3b-4508-b559-31d25a05bff6",
+      "name": "Indices",
+      "description": {
+        "content": "Index composition and replication data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "163e86a1-81d2-496c-8a17-56914b471512",
+          "name": "Get digital asset index composition",
+          "request": {
+            "name": "Get digital asset index composition",
+            "description": {
+              "content": "Return index composition data for Kaiko's digital-asset rate indices.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "index.v1",
+                "digital_asset_rates_compo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cb516644-f826-423f-af52-3f8deca141a6",
+              "name": "Index composition payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "index.v1",
+                    "digital_asset_rates_compo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "4fe4b4e4-b5a0-43b6-afee-528c55c1c0a4",
+      "name": "Supply",
+      "description": {
+        "content": "Asset supply and market-capitalization rankings.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "89749203-7c1a-41e9-8b97-cce151464f28",
+          "name": "Get top market-cap rankings",
+          "request": {
+            "name": "Get top market-cap rankings",
+            "description": {
+              "content": "Return market-capitalization rankings for top assets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "supply.v2",
+                "top"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c725078b-f8ec-4893-a3bf-9668aa8d90a5",
+              "name": "Supply ranking payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "supply.v2",
+                    "top"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us.market-api.kaiko.io/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Api-Key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9dc51a19-e323-48f8-a14c-e37f4c28e8bb",
+    "name": "Kaiko Market Data REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for accessing Kaiko's institutional-grade digital-asset market data, including Canton oracle prices, reference rates, indices, index replication rates, and supply / market-cap data. All requests are authenticated with an X-Api-Key header carrying the client's Kaiko API key.\n\nContact Support:\n Name: Kaiko Support",
+      "type": "text/plain"
+    }
+  }
+}
