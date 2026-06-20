@@ -2,7 +2,7 @@ aid: kaiko
 url: https://raw.githubusercontent.com/api-evangelist/kaiko/refs/heads/main/apis.yml
 name: Kaiko
 kind: company
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Web3
   - Crypto
@@ -29,7 +29,7 @@ apis:
       - Reference Data
       - Historical
       - Institutional
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://us.market-api.kaiko.io/v2
     humanURL: https://docs.kaiko.com/
     description: >-
@@ -54,7 +54,7 @@ apis:
       - Streaming
       - Real-time
       - gRPC
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.kaiko.com/stream/general/introduction
     description: >-
       Real-time crypto market data delivered over gRPC server-streaming. Feeds include
@@ -85,7 +85,7 @@ apis:
       - DEX
       - Liquidity
       - Multi-chain
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://us.market-api.kaiko.io/v2/data/onchain
     humanURL: https://docs.kaiko.com/onchain/overview
     description: On-chain metrics including DEX trades, liquidity, lending markets, and MEV signals across major chains.
@@ -105,7 +105,7 @@ apis:
       - Indices
       - Benchmark
       - Regulated
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://us.market-api.kaiko.io/v2/data/index.v1
     humanURL: https://www.kaiko.com/products/indices
     description: Regulated benchmark crypto indices designed for fund administrators and ETF/ETP issuers.
