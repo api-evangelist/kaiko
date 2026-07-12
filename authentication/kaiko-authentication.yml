@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/kaiko-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: apiKeyHeader
+  type: apiKey
+  in: header
+  parameter: X-Api-Key
+  description: Kaiko client API key delivered in the X-Api-Key header.
+  sources:
+  - openapi/kaiko-openapi.yml

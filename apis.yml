@@ -120,6 +120,10 @@ apis:
       - Crypto ETF/ETP NAV
       - Fund administrator NAV
 common:
+  - type: DomainSecurity
+    url: security/kaiko-domain-security.yml
+  - type: Authentication
+    url: authentication/kaiko-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/kaikodata
   - type: LinkedIn
