@@ -120,6 +120,8 @@ apis:
       - Crypto ETF/ETP NAV
       - Fund administrator NAV
 common:
+  - type: AgenticAccess
+    url: agentic-access/kaiko-agentic-access.yml
   - type: DomainSecurity
     url: security/kaiko-domain-security.yml
   - type: Authentication
