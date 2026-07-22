@@ -1,0 +1,43 @@
+generated: '2026-07-22'
+method: searched
+source: https://www.kaiko.com/compliance
+standards:
+  - id: soc2-type2
+    conforms: true
+    evidence: >-
+      Kaiko compliance page (https://www.kaiko.com/compliance) states "SOC 2 TYPE 2®  --
+      The SOC 2® Type II is an examination..." presenting Kaiko's SOC 2 Type II attestation.
+  - id: eu-bmr
+    conforms: true
+    evidence: >-
+      Kaiko Indices are marketed as "Enterprise-grade BMR-compliant reference rates"
+      (EU Benchmark Regulation) on kaiko.com; Kaiko Indices is the regulated benchmark
+      business (formerly Vinter).
+  - id: oauth2
+    conforms: false
+    evidence: No oauth2 security schemes; authentication is a static X-Api-Key header.
+  - id: oidc
+    conforms: false
+    evidence: No openid-configuration published on any Kaiko host (404).
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      Errors use a custom JSON envelope (result/message fields), not
+      application/problem+json. See errors/kaiko-problem-types.yml.
+  - id: pagination
+    conforms: true
+    evidence: >-
+      Documented continuation_token/page_size pagination with next_url convenience field
+      (https://docs.kaiko.com/rest-api/general/getting-started/pagination.md).
+  - id: idempotency
+    conforms: false
+    evidence: Read-only GET surface; no Idempotency-Key contract documented.
+  - id: grpc
+    conforms: true
+    evidence: >-
+      Kaiko Stream is delivered over gRPC server-streaming with published proto
+      definitions (grpc/kaiko-equities.proto, github.com/kaikodata/kaiko-proto-public)
+      and per-language SDKs.
+  - id: rfc8594-sunset
+    conforms: false
+    evidence: No Sunset/Deprecation header support documented.

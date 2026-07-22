@@ -1,0 +1,60 @@
+generated: '2026-07-22'
+method: searched
+source: https://github.com/kaikodata/kaiko-sdk-examples
+notes: >-
+  Kaiko SDK is a gRPC client for Kaiko Stream published per language at version 1.36.0
+  (verified on PyPI, npm, and NuGet 2026-07-22). Java/Scala artifacts are distributed from
+  Kaiko's own Maven repository (s3.us-east-2.wasabisys.com/kaiko-sdk), and the Rust SDK is
+  consumed as a git dependency from kaikodata/kaiko-rust-sdk (not on crates.io).
+packages:
+  - language: python
+    registry: pypi
+    name: kaikosdk
+    version: 1.36.0
+    url: https://pypi.org/project/kaikosdk/
+    install: pip install kaikosdk
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@kaiko-data/sdk-node"
+    version: 1.36.0
+    url: https://www.npmjs.com/package/@kaiko-data/sdk-node
+    install: npm install @kaiko-data/sdk-node
+    official: true
+  - language: csharp
+    registry: nuget
+    name: KaikoSdk
+    version: 1.36.0
+    url: https://www.nuget.org/packages/KaikoSdk
+    install: dotnet add package KaikoSdk
+    official: true
+  - language: go
+    registry: pkg.go.dev
+    name: github.com/kaikodata/kaiko-go-sdk
+    url: https://pkg.go.dev/github.com/kaikodata/kaiko-go-sdk
+    install: go get github.com/kaikodata/kaiko-go-sdk
+    official: true
+  - language: rust
+    registry: github
+    name: kaikosdk (kaikodata/kaiko-rust-sdk)
+    url: https://github.com/kaikodata/kaiko-rust-sdk
+    install: 'kaikosdk = { git = "https://github.com/kaikodata/kaiko-rust-sdk.git", tag = "1.35.0" }'
+    official: true
+  - language: java
+    registry: maven (Kaiko-hosted)
+    name: com.kaiko:java-sdk
+    url: https://sdk-documentation.kaiko.ovh/java
+    install: 'implementation "com.kaiko:java-sdk:<version>" (repo: https://s3.us-east-2.wasabisys.com/kaiko-sdk/java-sdk/releases)'
+    official: true
+  - language: cpp
+    registry: github
+    name: kaikodata/kaiko-cpp-sdk
+    url: https://github.com/kaikodata/kaiko-cpp-sdk
+    install: CMake/Conan build from source (see kaiko-sdk-examples/cpp)
+    official: true
+  - language: scala
+    registry: maven (Kaiko-hosted)
+    name: kaiko-sdk (Scala)
+    url: https://sdk-documentation.kaiko.ovh/scala
+    install: sbt dependency from Kaiko-hosted Maven repository (see kaiko-sdk-examples/scala)
+    official: true

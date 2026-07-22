@@ -1,0 +1,19 @@
+generated: '2026-07-22'
+method: searched
+probe: false
+url: https://www.kaiko.com/compliance
+certifications:
+  - SOC 2 Type II
+regulatory:
+  - >-
+    EU Benchmark Regulation (BMR): Kaiko Indices publishes "Enterprise-grade
+    BMR-compliant reference rates" (regulated benchmark business, formerly Vinter).
+legal: https://www.kaiko.com/legal-and-regulatory-documents
+evidence:
+  - source: https://www.kaiko.com/compliance
+    keywords: [SOC 2 Type 2, BMR-compliant reference rates, legal and regulatory documentation]
+notes: >-
+  The automated trust-center probe (probe-security-programs.py) recorded no hit because
+  Kaiko has no trust.<domain> subdomain and the compliance page keyword threshold was not
+  met; the page was verified manually on 2026-07-22 and explicitly presents Kaiko's
+  SOC 2 Type II examination alongside a legal and regulatory documents library.

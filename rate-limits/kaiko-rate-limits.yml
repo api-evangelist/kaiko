@@ -4,27 +4,27 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Kaiko
 providerId: kaiko
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-07-22'
 reconciled: false
 tags:
   - Crypto
   - Market Data
   - Rate Limiting
 description: >-
-  Kaiko rate limits are negotiated per enterprise contract. Standard institutional contracts
-  typically allow 10-100 requests per second on the REST API and a comparable stream connection
-  count on Kaiko Stream. Throttled requests return HTTP 429.
-notes: Limits are contract-specific; figures shown are typical institutional ranges.
+  Kaiko documents a standard REST API limit of 6000 requests per API key per minute;
+  requests beyond that threshold return HTTP 429. Higher limits and Kaiko Stream
+  connection counts are negotiated per enterprise contract (contact support@kaiko.com).
+notes: Documented standard REST limit; Stream limits are contract-specific.
 sources:
-  - https://docs.kaiko.com/
+  - https://docs.kaiko.com/rest-api/general/getting-started/rate-limiting.md
 responseCodes:
   throttled: 429
 limits:
-  - name: REST API (typical)
+  - name: REST API (standard)
     scope: api_key
-    metric: requests_per_second
-    limit: 100
-    notes: Negotiated per contract.
+    metric: requests_per_minute
+    limit: 6000
+    notes: Documented standard limit; higher limits negotiable via support@kaiko.com.
   - name: Stream connections (typical)
     scope: api_key
     metric: concurrent_connections

@@ -1,11 +1,18 @@
-generated: '2026-07-11'
-method: derived
-source: openapi/kaiko-openapi.yml
+generated: '2026-07-22'
+method: searched
+source: openapi/ security schemes
+docs: https://docs.kaiko.com/rest-api/general/getting-started/authentication.md
 summary:
   types:
   - apiKey
   api_key_in:
   - header
+notes: >-
+  All Kaiko REST requests carry the client API key in the X-Api-Key header; each Market
+  Data endpoint lives under its own hostname. Keys are provisioned via Kaiko's sales-led
+  onboarding (no self-serve signup, no OAuth). Kaiko Stream (gRPC) authenticates with the
+  same API key supplied via the per-language SDKs
+  (https://docs.kaiko.com/stream/general/general-information/api-key.md).
 schemes:
 - name: apiKeyHeader
   type: apiKey
@@ -13,4 +20,7 @@ schemes:
   parameter: X-Api-Key
   description: Kaiko client API key delivered in the X-Api-Key header.
   sources:
-  - openapi/kaiko-openapi.yml
+  - openapi/kaiko-canton-oracle-api-openapi.yml
+  - openapi/kaiko-index-reference-data-api-openapi.yml
+  - openapi/kaiko-indices-api-openapi.yml
+  - openapi/kaiko-supply-api-openapi.yml

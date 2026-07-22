@@ -1,0 +1,26 @@
+generated: '2026-07-22'
+method: searched
+source: https://docs.kaiko.com/
+versioning:
+  scheme: uri-path
+  current: v2
+  notes: >-
+    REST endpoints are versioned in the URL path (/v1, /v2, some /v3) with per-endpoint
+    dataset versions (trades.v1, index.v1, index_reference_data.v1). Dataset versioning is
+    orthogonal to API versioning: breaking data corrections mint a new dataset version
+    selected via the data_version parameter; Kaiko recommends pinning explicit versions
+    in production.
+  docs: https://docs.kaiko.com/rest-api/general/getting-started/data-versioning.md
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: >-
+    No standalone deprecation policy page or RFC 8594 Sunset header support is published.
+    Deprecations (e.g. instrument-code removals such as usdir in April 2026) are announced
+    in the dated "What's new" changelog.
+status_page: https://status.kaiko.com/
+changelog: https://docs.kaiko.com/whats-new/2026
+sla:
+  url: null
+  notes: SLA terms are contract-specific (enterprise, sales-led); none published publicly.
+deprecated_operations: []

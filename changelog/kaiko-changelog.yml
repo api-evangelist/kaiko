@@ -1,0 +1,36 @@
+generated: '2026-07-22'
+method: searched
+source: https://docs.kaiko.com/whats-new/2026
+scheme: dated-monthly
+notes: >-
+  Kaiko publishes a dated "What's new" changelog in its docs, organized by year and month
+  (2024-2026 online, with a "Previous updates" archive). Recent entries are dominated by
+  instrument/asset mapping updates; dataset versioning policy guarantees breaking data
+  corrections mint a new dataset version.
+entries:
+  - date: '2026-04-29'
+    type: mapping-update
+    breaking: true
+    highlights:
+      - Instruments previously mapped to Midnight Evergreen updated to Midnight; code midnight updated to night for applicable instruments.
+      - Instruments remapped from code robor to robof (asset updated to Fabric Protocol).
+    url: https://docs.kaiko.com/whats-new/2026/april-2026
+  - date: '2026-04-17'
+    type: mapping-update
+    breaking: true
+    highlights:
+      - StablR USD remapped from usdir to usdr; usdir deprecated and removed.
+      - All StablR USDR instruments across Kraken, BigONE, WhiteBIT, MEXC, CoinEx, Bitmart, Curve, Uniswap V3/V4 tracked under usdr.
+    url: https://docs.kaiko.com/whats-new/2026/april-2026
+  - date: '2026-03-09'
+    type: mapping-update
+    breaking: true
+    highlights:
+      - BSB remapped from bsb to bsba; Block Street now mapped to bsb.
+    url: https://docs.kaiko.com/whats-new/2026/march-2026
+  - date: '2026-03-06'
+    type: mapping-update
+    breaking: true
+    highlights:
+      - Transfer Coin remapped from tx to trnx; TX now mapped to tx.
+    url: https://docs.kaiko.com/whats-new/2026/march-2026

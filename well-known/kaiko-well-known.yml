@@ -1,0 +1,39 @@
+generated: '2026-07-22'
+method: searched
+notes: >-
+  Probe of the /.well-known/ discovery surface across Kaiko's website, docs, and API hosts.
+  No well-known documents are published: security.txt, openid-configuration,
+  oauth-authorization-server, api-catalog, and ai-plugin.json all miss. The API host
+  (us.market-api.kaiko.io) fronts everything with a 403 for unauthenticated requests.
+  The one machine-readable discovery document Kaiko publishes is llms.txt on the docs
+  host (saved verbatim at llms/kaiko-llms.txt).
+hosts:
+  - host: https://www.kaiko.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://docs.kaiko.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /llms.txt
+        status: 200
+        file: ../llms/kaiko-llms.txt
+  - host: https://us.market-api.kaiko.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+      - path: /.well-known/api-catalog
+        status: 403
+      - path: /openapi.json
+        status: 403
+      - path: /swagger.json
+        status: 403

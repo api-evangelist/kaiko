@@ -1,0 +1,44 @@
+openapi: 3.1.0
+info:
+  title: Kaiko Market Data REST Canton Oracle Index Reference Data API
+  description: REST API for accessing Kaiko's institutional-grade digital-asset market data, including Canton oracle prices, reference rates, indices, index replication rates, and supply / market-cap data. All requests are authenticated with an X-Api-Key header carrying the client's Kaiko API key.
+  version: 2.0.0
+  termsOfService: https://www.kaiko.com/pages/terms-of-use
+  contact:
+    name: Kaiko Support
+    url: https://docs.kaiko.com/
+  license:
+    name: Proprietary
+    url: https://www.kaiko.com/pages/terms-of-use
+servers:
+- url: https://us.market-api.kaiko.io/v2
+  description: Kaiko Market Data API v2
+- url: https://us.market-api.kaiko.io/v1
+  description: Kaiko Market Data API v1
+security:
+- apiKeyHeader: []
+tags:
+- name: Index Reference Data
+  description: Reference-rate data for Kaiko indices.
+paths:
+  /data/index_reference_data.v1/rates:
+    get:
+      operationId: getIndexReferenceRates
+      summary: Get index reference rates
+      description: Return reference-rate data for Kaiko indices.
+      tags:
+      - Index Reference Data
+      responses:
+        '200':
+          description: Reference-rate payload.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+      description: Kaiko client API key delivered in the X-Api-Key header.

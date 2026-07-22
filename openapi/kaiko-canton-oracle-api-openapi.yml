@@ -1,0 +1,58 @@
+openapi: 3.1.0
+info:
+  title: Kaiko Market Data REST Canton Oracle API
+  description: REST API for accessing Kaiko's institutional-grade digital-asset market data, including Canton oracle prices, reference rates, indices, index replication rates, and supply / market-cap data. All requests are authenticated with an X-Api-Key header carrying the client's Kaiko API key.
+  version: 2.0.0
+  termsOfService: https://www.kaiko.com/pages/terms-of-use
+  contact:
+    name: Kaiko Support
+    url: https://docs.kaiko.com/
+  license:
+    name: Proprietary
+    url: https://www.kaiko.com/pages/terms-of-use
+servers:
+- url: https://us.market-api.kaiko.io/v2
+  description: Kaiko Market Data API v2
+- url: https://us.market-api.kaiko.io/v1
+  description: Kaiko Market Data API v1
+security:
+- apiKeyHeader: []
+tags:
+- name: Canton Oracle
+  description: Canton oracle pricing endpoints.
+paths:
+  /data/canton/oracle/price/btc-usd:
+    get:
+      operationId: getCantonOracleBtcUsdPrice
+      summary: Get Canton oracle BTC-USD price
+      description: Return the current Canton oracle price for the BTC-USD pair.
+      tags:
+      - Canton Oracle
+      responses:
+        '200':
+          description: Canton oracle price payload.
+          content:
+            application/json:
+              schema:
+                type: object
+  /data/canton/oracle/brr/btc-usd:
+    get:
+      operationId: getCantonOracleBtcUsdBrr
+      summary: Get Canton oracle BTC-USD BRR
+      description: Return the current Canton oracle BRR (Benchmark Reference Rate) for BTC-USD.
+      tags:
+      - Canton Oracle
+      responses:
+        '200':
+          description: Canton oracle BRR payload.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+      description: Kaiko client API key delivered in the X-Api-Key header.

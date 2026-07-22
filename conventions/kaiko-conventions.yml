@@ -1,0 +1,64 @@
+generated: '2026-07-22'
+method: searched
+source: https://docs.kaiko.com/rest-api/general/getting-started
+authentication:
+  style: api-key
+  header: X-Api-Key
+  docs: https://docs.kaiko.com/rest-api/general/getting-started/authentication.md
+  notes: Every REST request carries the client API key in the X-Api-Key header. Each Market Data endpoint lives under its own hostname.
+  artifact: authentication/kaiko-authentication.yml
+idempotency:
+  supported: false
+  notes: >-
+    Kaiko's public REST surface is read-only (GET market-data queries), which is naturally
+    idempotent, but Kaiko documents no Idempotency-Key header or idempotency contract.
+pagination:
+  style: continuation-token
+  request_params: [continuation_token, page_size]
+  response_fields: [continuation_token, next_url]
+  docs: https://docs.kaiko.com/rest-api/general/getting-started/pagination.md
+  notes: >-
+    Larger result sets include a continuation_token and a ready-to-call next_url.
+    Only the first call should set page_size; subsequent calls pass only
+    continuation_token. Paginating with data version `latest` preserves the resolved
+    version across pages.
+envelope:
+  fields: [access, data, message, query, result, time, timestamp]
+  docs: https://docs.kaiko.com/rest-api/general/getting-started/envelope.md
+  notes: >-
+    Every response is JSON with result=success|error, the response payload in `data`,
+    handled query params echoed in `query`, and an `access` object carrying the
+    client's access_range and data_range entitlement windows.
+  artifact: errors/kaiko-problem-types.yml
+versioning:
+  api:
+    scheme: uri-path
+    current: v2
+    notes: REST endpoints are versioned in the URL path (/v1, /v2; some newer endpoints under /v3) and per-endpoint dataset versions (e.g. trades.v1, index.v1).
+  data:
+    scheme: dataset-versioning
+    param: data_version
+    docs: https://docs.kaiko.com/rest-api/general/getting-started/data-versioning.md
+    notes: >-
+      Datasets are versioned orthogonally to the API: breaking changes to historical
+      results mint a new dataset version, selected via the data_version parameter
+      (`latest` or explicit, e.g. v1). Kaiko recommends pinning an explicit version in
+      production. The resolved version is echoed in the response `query` field.
+  artifact: lifecycle/kaiko-lifecycle.yml
+rate_limits:
+  standard: 6000 requests per API key per minute (REST)
+  throttled_status: 429
+  docs: https://docs.kaiko.com/rest-api/general/getting-started/rate-limiting.md
+  artifact: rate-limits/kaiko-rate-limits.yml
+request_tracing:
+  documented: false
+error_handling:
+  envelope_fields: [result, message]
+  docs: https://docs.kaiko.com/rest-api/general/getting-started/error-codes.md
+  artifact: errors/kaiko-problem-types.yml
+streaming:
+  transport: grpc
+  notes: >-
+    Kaiko Stream is gRPC server-streaming only (Subscribe RPCs); there is no WebSocket
+    interface. See review.yml and grpc/kaiko-equities.proto.
+  docs: https://docs.kaiko.com/stream/general/introduction.md

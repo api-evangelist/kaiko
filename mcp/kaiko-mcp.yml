@@ -1,0 +1,29 @@
+generated: '2026-07-22'
+method: derived
+status: candidate
+source: openapi/ (derived from operationIds; no official Kaiko MCP server found 2026-07-22)
+notes: >-
+  Kaiko publishes no official hosted MCP server (searched docs.kaiko.com, the kaikodata
+  GitHub org, npm, and the MCP registries; the GitBook docs host answers 405 to MCP
+  tools/list POSTs). This is a candidate tool list derived from the REST OpenAPI
+  operations in this repo. Kaiko's real-time surface is gRPC (Kaiko Stream) and would
+  bind to an MCP server via the SDKs rather than REST.
+server:
+  name: kaiko
+  transport: http
+tools:
+  - name: get_canton_oracle_btc_usd_price
+    description: Get the current Canton oracle price for the BTC-USD pair.
+    source_operation: openapi/kaiko-canton-oracle-api-openapi.yml#getCantonOracleBtcUsdPrice
+  - name: get_canton_oracle_btc_usd_brr
+    description: Get the current Canton oracle BRR (Benchmark Reference Rate) for BTC-USD.
+    source_operation: openapi/kaiko-canton-oracle-api-openapi.yml#getCantonOracleBtcUsdBrr
+  - name: get_index_reference_rates
+    description: Get reference-rate data for Kaiko indices.
+    source_operation: openapi/kaiko-index-reference-data-api-openapi.yml#getIndexReferenceRates
+  - name: get_index_digital_asset_rates_composition
+    description: Get index composition and replication data for Kaiko digital asset rates.
+    source_operation: openapi/kaiko-indices-api-openapi.yml#getIndexDigitalAssetRatesComposition
+  - name: get_top_supply_assets
+    description: Get asset supply and market-capitalization rankings.
+    source_operation: openapi/kaiko-supply-api-openapi.yml#getTopSupplyAssets

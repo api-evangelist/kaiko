@@ -1,0 +1,11 @@
+generated: '2026-07-22'
+method: generated
+skills:
+  - file: kaiko-canton-oracle-pricing.md
+    name: Read Canton oracle BTC-USD pricing
+    api: openapi/kaiko-canton-oracle-api-openapi.yml
+    operations: [getCantonOracleBtcUsdPrice, getCantonOracleBtcUsdBrr]
+  - file: kaiko-index-rates-and-supply.md
+    name: Pull Kaiko index rates, composition, and supply rankings
+    api: openapi/kaiko-index-reference-data-api-openapi.yml
+    operations: [getIndexReferenceRates, getIndexDigitalAssetRatesComposition, getTopSupplyAssets]

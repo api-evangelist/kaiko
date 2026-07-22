@@ -1,0 +1,54 @@
+generated: '2026-07-22'
+method: searched
+source: https://docs.kaiko.com/rest-api/general/getting-started/error-codes.md
+format: custom-envelope
+envelope:
+  description: >-
+    All REST API responses are JSON with a `result` field of `success` or `error`.
+    On error, a `message` field carries the error message. The envelope also echoes
+    an `access` object (access_range, data_range), the handled `query` parameters,
+    and server `time`/`timestamp`.
+  fields:
+    result: '`success` or `error`'
+    message: Error message when the query was not successful.
+  docs: https://docs.kaiko.com/rest-api/general/getting-started/envelope.md
+problems:
+  - status: 400
+    title: Bad Request
+  - status: 401
+    title: Unauthorized
+    detail: Not authenticated properly; supply a valid X-Api-Key header.
+    docs: https://docs.kaiko.com/rest-api/general/getting-started/authentication.md
+  - status: 403
+    title: Forbidden
+    detail: You don't have access to the requested resource.
+  - status: 404
+    title: Not Found
+  - status: 405
+    title: Method Not Allowed
+  - status: 406
+    title: Not Acceptable
+  - status: 429
+    title: Rate limit reached
+    detail: Standard REST API limit is 6000 requests per API key per minute.
+    docs: https://docs.kaiko.com/rest-api/general/getting-started/rate-limiting.md
+  - status: 500
+    title: Internal Server Error
+    detail: Kaiko had a problem with the service; try again later.
+  - status: 503
+    title: Service Unavailable
+    detail: Temporarily offline for maintenance.
+stream_grpc:
+  description: >-
+    Kaiko Stream (gRPC) documents HTTP-mapped response codes; unexpected errors return
+    a gRPC rpcStatus payload.
+  docs: https://docs.kaiko.com/stream/general/general-information/response-codes.md
+  codes:
+    - status: 200
+      title: OK (streaming response)
+    - status: 403
+      title: Forbidden (no permission to access the resource)
+    - status: 404
+      title: Not Found (resource does not exist)
+    - status: default
+      title: Unexpected error (rpcStatus)

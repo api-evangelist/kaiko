@@ -1,0 +1,311 @@
+# Developer Hub
+
+## Kaiko Knowledge Hub
+
+- [About the Developer Hub](https://docs.kaiko.com/getting-started/about-the-developer-hub.md)
+- [About Kaiko](https://docs.kaiko.com/getting-started/about-kaiko.md): An introduction to Kaiko and our products.
+- [Tour the Knowledge Hub](https://docs.kaiko.com/getting-started/tour-the-knowledge-hub.md)
+- [Kaiko Examples](https://docs.kaiko.com/getting-started/kaiko-examples.md)
+- [Capture alpha before major events impact the market](https://docs.kaiko.com/getting-started/kaiko-examples/capture-alpha-before-major-events-impact-the-market.md)
+- [Trace stolen funds across a blockchain](https://docs.kaiko.com/getting-started/kaiko-examples/trace-stolen-funds-across-a-blockchain.md)
+- [Track asset volume on exchanges](https://docs.kaiko.com/getting-started/kaiko-examples/track-asset-volume-on-exchanges.md)
+- [Compare market depth between exchanges](https://docs.kaiko.com/getting-started/kaiko-examples/compare-market-depth-between-exchanges.md)
+- [Identify high-potential assets before they're listed on CEXs](https://docs.kaiko.com/getting-started/kaiko-examples/identify-high-potential-assets-before-theyre-listed-on-cexs.md)
+- [Generate a liquidity-based asset ranking](https://docs.kaiko.com/getting-started/kaiko-examples/generate-a-liquidity-based-asset-ranking.md)
+- [Analyze supply distribution to determine asset-risk](https://docs.kaiko.com/getting-started/kaiko-examples/analyze-supply-distribution-to-determine-asset-risk.md)
+- [Identify wash trading and volume quality](https://docs.kaiko.com/getting-started/kaiko-examples/identify-wash-trading-and-volume-quality.md)
+- [Gauge market sentiment with Implied Volatility](https://docs.kaiko.com/getting-started/kaiko-examples/gauge-market-sentiment-with-implied-volatility.md)
+- [Compare price slippage between exchanges](https://docs.kaiko.com/getting-started/kaiko-examples/compare-price-slippage-between-exchanges.md)
+- [2026](https://docs.kaiko.com/whats-new/2026.md)
+- [March 2026](https://docs.kaiko.com/whats-new/2026/march-2026.md)
+- [April 2026](https://docs.kaiko.com/whats-new/2026/april-2026.md)
+- [2025](https://docs.kaiko.com/whats-new/2025.md)
+- [September 2025](https://docs.kaiko.com/whats-new/2025/september-2025.md)
+- [July 2025](https://docs.kaiko.com/whats-new/2025/july-2025.md)
+- [June 2025](https://docs.kaiko.com/whats-new/2025/june-2025.md)
+- [May 2025](https://docs.kaiko.com/whats-new/2025/may-2025.md)
+- [April 2025](https://docs.kaiko.com/whats-new/2025/april-2025.md)
+- [March 2025](https://docs.kaiko.com/whats-new/2025/march-2025.md)
+- [February 2025](https://docs.kaiko.com/whats-new/2025/february-2025.md)
+- [2024](https://docs.kaiko.com/whats-new/2024.md)
+- [November 2024](https://docs.kaiko.com/whats-new/2024/november-2024.md)
+- [September 2024](https://docs.kaiko.com/whats-new/2024/september-2024.md)
+- [July 2024](https://docs.kaiko.com/whats-new/2024/july-2024.md): Our Latest Updates
+- [June 2024](https://docs.kaiko.com/whats-new/2024/june-2024.md)
+- [March 2024](https://docs.kaiko.com/whats-new/2024/march-2024.md)
+- [Previous updates](https://docs.kaiko.com/whats-new/previous-updates.md)
+- [Data dictionary](https://docs.kaiko.com/explore-our-data/data-dictionary.md): A comprehensive breakdown of Kaiko's data and endpoints
+- [Subscriptions: channel availability](https://docs.kaiko.com/explore-our-data/subscriptions-channel-availability.md)
+- [Cefi spot markets](https://docs.kaiko.com/coverage/cefi-spot-markets.md): Our coverage for centralized spot markets.
+- [Cefi derivative markets](https://docs.kaiko.com/coverage/cefi-derivative-markets.md)
+- [Defi spot markets](https://docs.kaiko.com/coverage/defi-spot-markets.md)
+- [Defi lending and borrowing protocols](https://docs.kaiko.com/coverage/defi-lending-and-borrowing-protocols.md)
+- [Supply and Market Cap](https://docs.kaiko.com/coverage/supply-and-market-cap.md)
+- [Total Value Locked (TVL)](https://docs.kaiko.com/coverage/total-value-locked-tvl.md)
+- [Kaiko Blockchain Monitoring](https://docs.kaiko.com/coverage/kaiko-blockchain-monitoring.md)
+- [Reference Rates](https://docs.kaiko.com/coverage/reference-rates.md): A list of our published Reference Rates
+- [Instrument Explorer](https://docs.kaiko.com/coverage/instrument-explorer.md)
+- [Status](https://docs.kaiko.com/coverage/status.md)
+
+## REST API
+
+- [Introduction](https://docs.kaiko.com/rest-api/general/introduction.md)
+- [Getting Started](https://docs.kaiko.com/rest-api/general/getting-started.md)
+- [API input](https://docs.kaiko.com/rest-api/general/getting-started/api-input.md)
+- [API output](https://docs.kaiko.com/rest-api/general/getting-started/api-output.md)
+- ["taker\_side\_sell" Explained](https://docs.kaiko.com/rest-api/general/getting-started/api-output/taker_side_sell-explained.md)
+- [Market open and close](https://docs.kaiko.com/rest-api/general/getting-started/api-output/market-open-and-close.md)
+- [Timestamp](https://docs.kaiko.com/rest-api/general/getting-started/api-output/timestamp.md)
+- [Authentication](https://docs.kaiko.com/rest-api/general/getting-started/authentication.md)
+- [Data versioning](https://docs.kaiko.com/rest-api/general/getting-started/data-versioning.md)
+- [Envelope](https://docs.kaiko.com/rest-api/general/getting-started/envelope.md)
+- [Error codes](https://docs.kaiko.com/rest-api/general/getting-started/error-codes.md)
+- [Pagination](https://docs.kaiko.com/rest-api/general/getting-started/pagination.md)
+- [Rate limiting](https://docs.kaiko.com/rest-api/general/getting-started/rate-limiting.md)
+- [Introduction](https://docs.kaiko.com/rest-api/data-feeds/introduction.md): Basic information about Kaiko Data Feeds.
+- [Level 1 & Level 2 Data](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data.md)
+- [Level 1 Aggregations](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-1-aggregations.md)
+- [Trade Count, OHLCV, & VWAP](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-1-aggregations/trade-count-ohlcv-and-vwap.md)
+- [OHLCV only](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-1-aggregations/trade-count-ohlcv-and-vwap/ohlcv-only.md)
+- [VWAP only](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-1-aggregations/trade-count-ohlcv-and-vwap/vwap-only.md)
+- [Level 1 Tick-Level](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-1-tick-level.md)
+- [All trades](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-1-tick-level/all-trades.md)
+- [DEX trades](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-1-tick-level/dex-trades.md)
+- [Derivative liquidation events](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-1-tick-level/derivative-liquidation-events.md): Each and every derivative liquidation event
+- [Borrows, repayments, liquidations, and withdrawals](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-1-tick-level/borrows-repayments-liquidations-and-withdrawals.md)
+- [Level 2 Aggregations](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-2-aggregations.md)
+- [Market depth (snapshot)](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-2-aggregations/market-depth-snapshot.md)
+- [Market depth (aggregation)](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-2-aggregations/market-depth-aggregation.md)
+- [Price slippage (snapshot)](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-2-aggregations/price-slippage-snapshot.md)
+- [Price slippage (aggregation)](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-2-aggregations/price-slippage-aggregation.md)
+- [Bid-ask spread (aggregation)](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-2-aggregations/bid-ask-spread-aggregation.md)
+- [Tokens in a liquidity pool](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-2-aggregations/tokens-in-a-liquidity-pool.md)
+- [Tokens in a liquidity pool (Uniswap v3)](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-2-aggregations/tokens-in-a-liquidity-pool/tokens-in-a-liquidity-pool-uniswap-v3.md)
+- [Interest rates, borrowed and deposited amounts](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-2-aggregations/interest-rates-borrowed-and-deposited-amounts.md)
+- [Lending Users Positions](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-2-aggregations/lending-users-positions.md)
+- [Raw order book snapshot](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-2-aggregations/raw-order-book-snapshot.md)
+- [Raw order book snapshot + market depth, bid/ask spread & price slippage](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-2-aggregations/raw-order-book-snapshot/raw-order-book-snapshot-+-market-depth-bid-ask-spread-and-price-slippage.md)
+- [Level 2 Tick-Level](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-2-tick-level.md)
+- [Mints and burns](https://docs.kaiko.com/rest-api/data-feeds/level-1-and-level-2-data/level-2-tick-level/mints-and-burns.md)
+- [Reference Data](https://docs.kaiko.com/rest-api/data-feeds/reference-data.md)
+- [Basic tier](https://docs.kaiko.com/rest-api/data-feeds/reference-data/basic-tier.md)
+- [Asset codes](https://docs.kaiko.com/rest-api/data-feeds/reference-data/basic-tier/asset-codes.md)
+- [Exchange codes](https://docs.kaiko.com/rest-api/data-feeds/reference-data/basic-tier/exchange-codes.md)
+- [Exchange trading pair codes (instruments)](https://docs.kaiko.com/rest-api/data-feeds/reference-data/basic-tier/exchange-trading-pair-codes-instruments.md)
+- [DeFi protocol codes](https://docs.kaiko.com/rest-api/data-feeds/reference-data/basic-tier/defi-protocol-codes.md)
+- [On-Chain pools](https://docs.kaiko.com/rest-api/data-feeds/reference-data/basic-tier/on-chain-pools.md)
+- [Blockchain codes](https://docs.kaiko.com/rest-api/data-feeds/reference-data/basic-tier/blockchain-codes.md)
+- [Advanced tier](https://docs.kaiko.com/rest-api/data-feeds/reference-data/advanced-tier.md)
+- [Derivatives contract details](https://docs.kaiko.com/rest-api/data-feeds/reference-data/advanced-tier/derivatives-contract-details.md)
+- [Derivatives price details](https://docs.kaiko.com/rest-api/data-feeds/reference-data/advanced-tier/derivatives-price-details.md): Derivatives price endpoint
+- [Introduction](https://docs.kaiko.com/rest-api/analytics-solutions/introduction.md)
+- [Kaiko Fair Market Value](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-fair-market-value.md): Accurately value your digital assets to meet fair value standards and regulatory requirements.
+- [Established assets](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-fair-market-value/established-assets.md)
+- [Direct price](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-fair-market-value/established-assets/direct-price.md)
+- [Synthetic price](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-fair-market-value/established-assets/synthetic-price.md)
+- [Convert with Oanda FX Rates](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-fair-market-value/established-assets/synthetic-price/convert-with-oanda-fx-rates.md)
+- [Principal market price](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-fair-market-value/established-assets/principal-market-price.md)
+- [Emerging assets](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-fair-market-value/emerging-assets.md)
+- [State price](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-fair-market-value/emerging-assets/state-price.md)
+- [Kaiko Derivatives Risk Indicators](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-derivatives-risk-indicators.md)
+- [Exchange-provided metrics](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-derivatives-risk-indicators/exchange-provided-metrics.md): Derivatives Risk endpoint
+- [Token-level liquidation volumes](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-derivatives-risk-indicators/token-level-liquidation-volumes.md): Liquidation insight for derivatives exchanges
+- [Implied volatility calculation - smile](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-derivatives-risk-indicators/implied-volatility-calculation-smile.md)
+- [Implied volatility calculation - surface](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-derivatives-risk-indicators/implied-volatility-calculation-surface.md)
+- [Kaiko Portfolio & Risk Management](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-portfolio-and-risk-management.md)
+- [Value at risk calculation](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-portfolio-and-risk-management/value-at-risk-calculation.md)
+- [Expected shortfall calculation](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-portfolio-and-risk-management/expected-shortfall-calculation.md)
+- [Custom valuation](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-portfolio-and-risk-management/custom-valuation.md)
+- [Price a full portfolio](https://docs.kaiko.com/rest-api/analytics-solutions/kaiko-portfolio-and-risk-management/price-a-full-portfolio.md)
+- [Kaiko Market Explorer](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-market-explorer.md)
+- [Assets](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-market-explorer/assets.md)
+- [Stablecoins](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-market-explorer/stablecoins.md)
+- [Exchanges](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-market-explorer/exchanges.md)
+- [Supply and Market Cap](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-market-explorer/supply-and-market-cap.md)
+- [Supply](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-market-explorer/supply-and-market-cap/supply.md)
+- [Supply Per Blockchain](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-market-explorer/supply-and-market-cap/supply-per-blockchain.md)
+- [Aggregated Supply](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-market-explorer/supply-and-market-cap/aggregated-supply.md)
+- [Market cap ranking](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-market-explorer/supply-and-market-cap/market-cap-ranking.md)
+- [Total Value Locked (TVL)](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-market-explorer/total-value-locked-tvl.md)
+- [Staking rates](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-market-explorer/staking-rates.md)
+- [Kaiko Blockchain Monitoring](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-blockchain-monitoring.md)
+- [Ethereum Wallets](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-blockchain-monitoring/ethereum-wallets.md)
+- [Balances and transactions](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-blockchain-monitoring/ethereum-wallets/balances-and-transactions.md)
+- [Bitcoin Wallets](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-blockchain-monitoring/bitcoin-wallets.md)
+- [Balances](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-blockchain-monitoring/bitcoin-wallets/balances.md)
+- [Transaction](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-blockchain-monitoring/bitcoin-wallets/transaction.md)
+- [Solana Wallets](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-blockchain-monitoring/solana-wallets.md)
+- [Balances and transactions](https://docs.kaiko.com/rest-api/monitoring-solutions/kaiko-blockchain-monitoring/solana-wallets/balances-and-transactions.md)
+- [CME](https://docs.kaiko.com/rest-api/misc-custom-and-legacy-endpoints/cme.md)
+- [Broadridge DLR Statistics](https://docs.kaiko.com/rest-api/misc-custom-and-legacy-endpoints/broadridge-dlr-statistics.md)
+- [Derivatives contract details V3](https://docs.kaiko.com/rest-api/misc-custom-and-legacy-endpoints/derivatives-contract-details-v3.md): Beta version for Beta users.
+
+## Stream
+
+- [Introduction](https://docs.kaiko.com/stream/general/introduction.md): A little about Kaiko Stream.
+- [General information](https://docs.kaiko.com/stream/general/general-information.md)
+- [Response codes](https://docs.kaiko.com/stream/general/general-information/response-codes.md)
+- [API Key](https://docs.kaiko.com/stream/general/general-information/api-key.md)
+- [Parameter patterns](https://docs.kaiko.com/stream/general/general-information/parameter-patterns.md)
+- [Rate limiting](https://docs.kaiko.com/stream/general/general-information/rate-limiting.md)
+- [Quick-Start Guides](https://docs.kaiko.com/stream/general/quick-start-guides.md): The prerequisites for setting up your Kaiko Stream
+- [Quick-Start: Python](https://docs.kaiko.com/stream/general/quick-start-guides/quick-start-python.md): Get started with Kaiko Stream and Python
+- [Quick-Start: cURL](https://docs.kaiko.com/stream/general/quick-start-guides/quick-start-curl.md)
+- [Introduction](https://docs.kaiko.com/stream/data-feeds/introduction.md): Basic information about Kaiko Market Data.
+- [Level 1 & Level 2 Data](https://docs.kaiko.com/stream/data-feeds/level-1-and-level-2-data.md)
+- [Level 1 Aggregations](https://docs.kaiko.com/stream/data-feeds/level-1-and-level-2-data/level-1-aggregations.md)
+- [OHLCV](https://docs.kaiko.com/stream/data-feeds/level-1-and-level-2-data/level-1-aggregations/ohlcv.md)
+- [VWAP](https://docs.kaiko.com/stream/data-feeds/level-1-and-level-2-data/level-1-aggregations/vwap.md)
+- [Level 1 Tick-Level](https://docs.kaiko.com/stream/data-feeds/level-1-and-level-2-data/level-1-tick-level.md)
+- [All trades](https://docs.kaiko.com/stream/data-feeds/level-1-and-level-2-data/level-1-tick-level/all-trades.md)
+- [Best bids and asks (top of book)](https://docs.kaiko.com/stream/data-feeds/level-1-and-level-2-data/level-1-tick-level/best-bids-and-asks-top-of-book.md)
+- [Level 2 Tick-Level](https://docs.kaiko.com/stream/data-feeds/level-1-and-level-2-data/level-2-tick-level.md)
+- [Bids and asks](https://docs.kaiko.com/stream/data-feeds/level-1-and-level-2-data/level-2-tick-level/bids-and-asks.md)
+- [Reference Data](https://docs.kaiko.com/stream/data-feeds/reference-data.md)
+- [Derivatives pricing](https://docs.kaiko.com/stream/data-feeds/reference-data/derivatives-pricing.md): Derivatives price endpoint.
+- [Kaiko Best Execution](https://docs.kaiko.com/stream/analytics-solutions/kaiko-best-execution.md)
+- [Kaiko Fair Market Value](https://docs.kaiko.com/stream/analytics-solutions/kaiko-fair-market-value.md)
+- [Established assets](https://docs.kaiko.com/stream/analytics-solutions/kaiko-fair-market-value/established-assets.md)
+- [Direct price](https://docs.kaiko.com/stream/analytics-solutions/kaiko-fair-market-value/established-assets/direct-price.md)
+- [Synthetic price](https://docs.kaiko.com/stream/analytics-solutions/kaiko-fair-market-value/established-assets/synthetic-price.md)
+- [Emerging assets](https://docs.kaiko.com/stream/analytics-solutions/kaiko-fair-market-value/emerging-assets.md)
+- [State price](https://docs.kaiko.com/stream/analytics-solutions/kaiko-fair-market-value/emerging-assets/state-price.md)
+- [Kaiko Derivatives Risk Indicators](https://docs.kaiko.com/stream/analytics-solutions/kaiko-derivatives-risk-indicators.md)
+- [Exchange-provided metrics](https://docs.kaiko.com/stream/analytics-solutions/kaiko-derivatives-risk-indicators/exchange-provided-metrics.md): Available in the "basic" pack of Derivatives Risk Indicators.
+- [Implied Volatility SVI (Closed Beta)](https://docs.kaiko.com/stream/beta-endpoints/implied-volatility-svi-closed-beta.md)
+
+## Cloud Delivery
+
+- [Introduction](https://docs.kaiko.com/cloud-delivery/general/introduction.md)
+- [Getting Started](https://docs.kaiko.com/cloud-delivery/getting-started.md)
+- [BigQuery](https://docs.kaiko.com/cloud-delivery/getting-started/bigquery.md): How to receive our data through BigQuery
+- [Google Cloud](https://docs.kaiko.com/cloud-delivery/getting-started/google-cloud.md): How to receive our data through Google Cloud
+- [Azure Blob](https://docs.kaiko.com/cloud-delivery/getting-started/azure-blob.md): How to receive our data through Azure Blob
+- [AWS S3](https://docs.kaiko.com/cloud-delivery/getting-started/aws-s3.md): How to receive our data through AWS
+- [Snowflake](https://docs.kaiko.com/cloud-delivery/getting-started/snowflake.md): How to receive our data through Snowflake
+- [Level 1 Aggregations](https://docs.kaiko.com/cloud-delivery/data-feeds/level-1-aggregations.md)
+- [Trade Count, OHLCV & VWAP](https://docs.kaiko.com/cloud-delivery/data-feeds/level-1-aggregations/trade-count-ohlcv-and-vwap.md)
+- [VWAP Only](https://docs.kaiko.com/cloud-delivery/data-feeds/level-1-aggregations/trade-count-ohlcv-and-vwap/vwap-only.md)
+- [OHLCV Only](https://docs.kaiko.com/cloud-delivery/data-feeds/level-1-aggregations/trade-count-ohlcv-and-vwap/ohlcv-only.md)
+- [Level 1 Tick-Level](https://docs.kaiko.com/cloud-delivery/data-feeds/level-1-tick-level.md)
+- [All trades](https://docs.kaiko.com/cloud-delivery/data-feeds/level-1-tick-level/all-trades.md)
+- [Best bids and asks (top of book)](https://docs.kaiko.com/cloud-delivery/data-feeds/level-1-tick-level/best-bids-and-asks-top-of-book.md)
+- [Borrows, repayments, liquidations, and withdrawals](https://docs.kaiko.com/cloud-delivery/data-feeds/level-1-tick-level/borrows-repayments-liquidations-and-withdrawals.md)
+- [Level 2 Aggregations](https://docs.kaiko.com/cloud-delivery/data-feeds/level-2-aggregations.md)
+- [Raw order book snapshot](https://docs.kaiko.com/cloud-delivery/data-feeds/level-2-aggregations/raw-order-book-snapshot.md)
+- [Interest rates, borrowed and deposited amounts](https://docs.kaiko.com/cloud-delivery/data-feeds/level-2-aggregations/interest-rates-borrowed-and-deposited-amounts.md)
+- [Tokens in a liquidity pool](https://docs.kaiko.com/cloud-delivery/data-feeds/level-2-aggregations/tokens-in-a-liquidity-pool.md)
+- [Tokens in a liquidity pool (Uniswap v3)](https://docs.kaiko.com/cloud-delivery/data-feeds/level-2-aggregations/tokens-in-a-liquidity-pool/tokens-in-a-liquidity-pool-uniswap-v3.md)
+- [Level 2 Tick-Level](https://docs.kaiko.com/cloud-delivery/data-feeds/level-2-tick-level.md)
+- [Bids and asks](https://docs.kaiko.com/cloud-delivery/data-feeds/level-2-tick-level/bids-and-asks.md)
+- [Mints and burns](https://docs.kaiko.com/cloud-delivery/data-feeds/level-2-tick-level/mints-and-burns.md)
+- [Reference Data](https://docs.kaiko.com/cloud-delivery/data-feeds/reference-data.md)
+- [Derivatives price details](https://docs.kaiko.com/cloud-delivery/data-feeds/reference-data/derivatives-price-details.md)
+- [Derivatives Risk Indicators](https://docs.kaiko.com/cloud-delivery/analytics-solutions/derivatives-risk-indicators.md)
+- [Exchange-provided metrics](https://docs.kaiko.com/cloud-delivery/analytics-solutions/derivatives-risk-indicators/exchange-provided-metrics.md)
+- [Blockchain Monitoring](https://docs.kaiko.com/cloud-delivery/monitoring-solutions/blockchain-monitoring.md)
+- [Ethereum Wallets](https://docs.kaiko.com/cloud-delivery/monitoring-solutions/blockchain-monitoring/ethereum-wallets.md)
+- [Bitcoin Wallets](https://docs.kaiko.com/cloud-delivery/monitoring-solutions/blockchain-monitoring/bitcoin-wallets.md)
+
+## On-Chain
+
+- [Introduction](https://docs.kaiko.com/on-chain/introduction.md)
+- [Kaiko Reference Rates](https://docs.kaiko.com/on-chain/kaiko-data/kaiko-reference-rates.md)
+- [Data On-Ramp](https://docs.kaiko.com/on-chain/kaiko-data/kaiko-reference-rates/data-on-ramp.md)
+- [Arbitrum](https://docs.kaiko.com/on-chain/kaiko-data/kaiko-reference-rates/data-on-ramp/arbitrum.md)
+- [Corporate actions on Arbitrum](https://docs.kaiko.com/on-chain/kaiko-data/kaiko-reference-rates/data-on-ramp/arbitrum/corporate-actions-on-arbitrum.md)
+- [Canton request-response oracle](https://docs.kaiko.com/on-chain/kaiko-data/kaiko-reference-rates/data-on-ramp/canton-request-response-oracle.md): Real-time Reference Rates & Indices on Canton
+- [Canton pull oracle](https://docs.kaiko.com/on-chain/kaiko-data/kaiko-reference-rates/data-on-ramp/canton-pull-oracle.md)
+- [NCFX](https://docs.kaiko.com/on-chain/third-party-data/ncfx.md)
+- [Data On-Ramp](https://docs.kaiko.com/on-chain/third-party-data/ncfx/data-on-ramp.md)
+- [Request-response oracle](https://docs.kaiko.com/on-chain/third-party-data/ncfx/data-on-ramp/request-response-oracle.md)
+- [Bloomberg](https://docs.kaiko.com/on-chain/third-party-data/bloomberg.md)
+- [Bloomberg DL onboarding](https://docs.kaiko.com/on-chain/third-party-data/bloomberg/bloomberg-dl-onboarding.md): Learn how to onboard to Bloomberg services provided through Kaiko
+- [Data On-Ramp](https://docs.kaiko.com/on-chain/third-party-data/bloomberg/data-on-ramp.md)
+- [Request-response oracle](https://docs.kaiko.com/on-chain/third-party-data/bloomberg/data-on-ramp/request-response-oracle.md)
+
+## Kaiko Indices Documentation
+
+- [About Kaiko Indices](https://docs.kaiko.com/kaiko-indices/getting-started/about-kaiko-indices.md)
+- [General information](https://docs.kaiko.com/kaiko-indices/getting-started/general-information.md)
+- [API Key](https://docs.kaiko.com/kaiko-indices/getting-started/general-information/api-key.md)
+- [Timestamps](https://docs.kaiko.com/kaiko-indices/getting-started/general-information/timestamps.md)
+- [Index codes](https://docs.kaiko.com/kaiko-indices/getting-started/general-information/index-codes.md)
+- [REST API Pagination](https://docs.kaiko.com/kaiko-indices/getting-started/general-information/rest-api-pagination.md)
+- [Subscribe](https://docs.kaiko.com/kaiko-indices/reference-rates/subscribe.md): How to configure a Reference Rate stream.
+- [Reference data](https://docs.kaiko.com/kaiko-indices/reference-rates/reference-data.md)
+- [FOREX conversion](https://docs.kaiko.com/kaiko-indices/reference-rates/forex-conversion.md): Convert your USD rate into a currency of your choosing.
+- [Historical prices](https://docs.kaiko.com/kaiko-indices/reference-rates/historical-prices.md)
+- [Replication data](https://docs.kaiko.com/kaiko-indices/reference-rates/replication-data.md): Identify the underlying trades used to calculate each rate publication
+- [Composition data](https://docs.kaiko.com/kaiko-indices/reference-rates/composition-data.md)
+- [Subscribe](https://docs.kaiko.com/kaiko-indices/reference-rates-capital-market/subscribe.md)
+- [Subscribe - futures](https://docs.kaiko.com/kaiko-indices/reference-rates-capital-market/subscribe-futures.md)
+- [Reference data](https://docs.kaiko.com/kaiko-indices/reference-rates-capital-market/reference-data.md)
+- [Reference data - corporate actions](https://docs.kaiko.com/kaiko-indices/reference-rates-capital-market/reference-data-corporate-actions.md)
+- [Corporate Action](https://docs.kaiko.com/kaiko-indices/reference-rates-capital-market/corporate-action.md)
+- [Reference data - market calendar and trading sessions](https://docs.kaiko.com/kaiko-indices/reference-rates-capital-market/reference-data-market-calendar-and-trading-sessions.md)
+- [FOREX conversion](https://docs.kaiko.com/kaiko-indices/reference-rates-capital-market/forex-conversion.md): Convert your USD reference rate into a currency of your choosing.
+- [Subscribe](https://docs.kaiko.com/kaiko-indices/indices/subscribe.md): How to configure a Kaiko multi-asset rate stream.
+- [Valour - CDF Index](https://docs.kaiko.com/kaiko-indices/customized-indices/valour-cdf-index.md)
+- [Staking Indices](https://docs.kaiko.com/kaiko-indices/customized-indices/staking-indices.md)
+
+## Kaiko Indices Documentation (Formerly Vinter APIs)
+
+- [Kaiko and Vinter](https://docs.kaiko.com/formerly-vinter-indices/kaiko-and-vinter.md)
+- [General](https://docs.kaiko.com/formerly-vinter-indices/general.md)
+- [Overview](https://docs.kaiko.com/formerly-vinter-indices/api/overview.md)
+- [Multi Assets Indexes](https://docs.kaiko.com/formerly-vinter-indices/api/multi-assets-indexes.md)
+- [Active Multi Assets](https://docs.kaiko.com/formerly-vinter-indices/api/multi-assets-indexes/active-multi-assets.md): The active multi assets endpoint returns information on all multi assets indexes.
+- [Multi Assets Parameters](https://docs.kaiko.com/formerly-vinter-indices/api/multi-assets-indexes/multi-assets-parameters.md): The multi assets parameters endpoint returns information on all multi assets indexes parameters.
+- [Multi Assets Daily](https://docs.kaiko.com/formerly-vinter-indices/api/multi-assets-indexes/multi-assets-daily.md): The multi assets daily endpoint returns values for a specific multi asset index that is calculated on a daily basis.
+- [Multi Assets Hourly](https://docs.kaiko.com/formerly-vinter-indices/api/multi-assets-indexes/multi-assets-hourly.md): The multi assets hourly endpoint returns values for a specific multi asset index that is calculated on an hourly basis.
+- [Multi Assets Real Time](https://docs.kaiko.com/formerly-vinter-indices/api/multi-assets-indexes/multi-assets-real-time.md): The multi assets real-time endpoint returns values on a specific multi asset index that is calculated on a continuous basis.
+- [Single Assets Reference Rates](https://docs.kaiko.com/formerly-vinter-indices/api/single-assets-reference-rates.md)
+- [Active Single Assets](https://docs.kaiko.com/formerly-vinter-indices/api/single-assets-reference-rates/active-single-assets.md): The active single assets endpoint returns information on all single assets indexes.
+- [Single Assets Daily](https://docs.kaiko.com/formerly-vinter-indices/api/single-assets-reference-rates/single-assets-daily.md): The single assets daily endpoint returns values for a specific single asset index that is calculated on a daily basis.
+- [Single Assets Hourly](https://docs.kaiko.com/formerly-vinter-indices/api/single-assets-reference-rates/single-assets-hourly.md): The single assets hourly endpoint returns values for a specific single asset index that is calculated on an hourly basis.
+- [Single Assets Real Time](https://docs.kaiko.com/formerly-vinter-indices/api/single-assets-reference-rates/single-assets-real-time.md): The single assets real-time endpoint returns values on a specific single asset index that is calculated on a continuous basis.
+- [Timeseries ID](https://docs.kaiko.com/formerly-vinter-indices/api/single-assets-reference-rates/timeseries-id.md): Describe the meaning behind using numbers in reference rates' name.
+- [Leveraged Indexes](https://docs.kaiko.com/formerly-vinter-indices/api/leveraged-indexes.md): Our leveraged indexes offer amplified exposure to single and multi-asset indexes calculated by Vinter. This section outlines the different types of leveraged indexes available, including single assets
+- [Leveraged Single Assets](https://docs.kaiko.com/formerly-vinter-indices/api/leveraged-indexes/leveraged-single-assets.md): Our Leveraged Single Assets API allows you to access data on individual leveraged assets. These indexes are designed to magnify exposure to a single asset's price movements.
+- [Leveraged Active Single Assets](https://docs.kaiko.com/formerly-vinter-indices/api/leveraged-indexes/leveraged-single-assets/leveraged-active-single-assets.md): The active leveraged assets endpoint returns information on all sinlge leveraged assets indexes.
+- [Leveraged Single Assets Daily](https://docs.kaiko.com/formerly-vinter-indices/api/leveraged-indexes/leveraged-single-assets/leveraged-single-assets-daily.md): The leveraged assets daily endpoint returns values for a specific leveraged asset that is calculated on a daily basis.
+- [Leveraged Multi Assets](https://docs.kaiko.com/formerly-vinter-indices/api/leveraged-indexes/leveraged-multi-assets.md): Our Leveraged Multi-Assets API allows you to access data on individual leveraged multi-asset indexes. These indexes are designed to magnify exposure to a single asset's price movements.
+- [Leveraged Active Multi Assets](https://docs.kaiko.com/formerly-vinter-indices/api/leveraged-indexes/leveraged-multi-assets/leveraged-active-multi-assets.md): The active leveraged assets endpoint returns information on all leveraged multi assets indexes.
+- [Leveraged Multi Assets Daily](https://docs.kaiko.com/formerly-vinter-indices/api/leveraged-indexes/leveraged-multi-assets/leveraged-multi-assets-daily.md): The leveraged assets daily endpoint returns values for a specific leveraged asset that is calculated on a daily basis.
+- [Vinter Taxonomy (VTAXO)](https://docs.kaiko.com/formerly-vinter-indices/api/vinter-taxonomy-vtaxo.md): The VTAXO for crypto assets is a classification framework that organizes digital assets into categories based on their underlying characteristics and use cases.
+- [Active VTAXO](https://docs.kaiko.com/formerly-vinter-indices/api/vinter-taxonomy-vtaxo/active-vtaxo.md): The active VTAXO endpoint returns information on all available categories. And meta information related to the categories.
+- [VTAXO](https://docs.kaiko.com/formerly-vinter-indices/api/vinter-taxonomy-vtaxo/vtaxo.md): The VTAXO endpoint returns assets by categories. Same asset can be present in multiple categories.
+- [Net Asset Value (NAV)](https://docs.kaiko.com/formerly-vinter-indices/api/net-asset-value-nav.md): Vinter provides Net Asset Value calculation on a daily and hourly basis. For more information please contact support@kaiko.com
+- [Active Net Asset Value](https://docs.kaiko.com/formerly-vinter-indices/api/net-asset-value-nav/active-net-asset-value.md): The active net asset value endpoint returns information on all active instruments where Vinter performs Net Asset Value calculations.
+- [Net Asset Value Daily](https://docs.kaiko.com/formerly-vinter-indices/api/net-asset-value-nav/net-asset-value-daily.md)
+- [Net Asset Value Hourly](https://docs.kaiko.com/formerly-vinter-indices/api/net-asset-value-nav/net-asset-value-hourly.md)
+- [Net Asset Value Real Time](https://docs.kaiko.com/formerly-vinter-indices/api/net-asset-value-nav/net-asset-value-real-time.md)
+- [Staking Yield Reference Rates](https://docs.kaiko.com/formerly-vinter-indices/api/staking-yield-reference-rates.md)
+- [Staking Tiers](https://docs.kaiko.com/formerly-vinter-indices/api/staking-yield-reference-rates/staking-tiers.md): Describe the different staking yields configurations
+- [On-Chain Tier](https://docs.kaiko.com/formerly-vinter-indices/api/staking-yield-reference-rates/staking-tiers/on-chain-tier.md): These sources offer non-aggregated blockchain data, which allows for calculating the Annual Percentage Rate (APR) for each validator.
+- [Staking Provider Tier](https://docs.kaiko.com/formerly-vinter-indices/api/staking-yield-reference-rates/staking-tiers/staking-provider-tier.md): Corporate entities / Decentralized Autonomous Organizations (DAO) that provide validator services.
+- [Exchange Tier](https://docs.kaiko.com/formerly-vinter-indices/api/staking-yield-reference-rates/staking-tiers/exchange-tier.md): Exchanges offering staking as a service
+- [Active Staking Yields](https://docs.kaiko.com/formerly-vinter-indices/api/staking-yield-reference-rates/active-staking-yields.md): The active staking yield endpoint returns information on all staking yield rates.
+- [Staking Yields Daily](https://docs.kaiko.com/formerly-vinter-indices/api/staking-yield-reference-rates/staking-yields-daily.md): The staking yields daily endpoint returns staking rates for different protocols.
+- [API Requests Parameters](https://docs.kaiko.com/formerly-vinter-indices/api/api-requests-parameters.md): This page summarises the parameters available to make API requests.
+- [API Error Messages](https://docs.kaiko.com/formerly-vinter-indices/api/api-error-messages.md): API Error Messages are returned in a response format to indicate that a requested API operation was not successful. The response includes a "result" field with the value "error"
+- [Onboarding](https://docs.kaiko.com/formerly-vinter-indices/faq/onboarding.md)
+- [Product-related](https://docs.kaiko.com/formerly-vinter-indices/faq/product-related.md)
+- [Tech-related](https://docs.kaiko.com/formerly-vinter-indices/faq/tech-related.md)
+
+
+---
+
+# Agent Instructions
+This documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.
+
+## Querying This Documentation
+If you need additional information, you can query the documentation dynamically by asking a question.
+Perform an HTTP GET request on a page URL with the `ask` query parameter:
+```
+GET https://docs.kaiko.com/getting-started/about-the-developer-hub.md?ask=<question>
+```
+The question should be specific, self-contained, and written in natural language.
+The response will contain a direct answer to the question and relevant excerpts and sources from the documentation.
+Use this mechanism when the answer is not explicitly present in the current page, you need clarification or additional context, or you want to retrieve related documentation sections.

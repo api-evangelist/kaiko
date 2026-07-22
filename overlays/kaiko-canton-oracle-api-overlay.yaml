@@ -1,0 +1,26 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Kaiko Canton Oracle API
+  version: 1.0.0
+extends: openapi/kaiko-canton-oracle-api-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist:
+        provider: kaiko
+        generated: '2026-07-22'
+        conventions: conventions/kaiko-conventions.yml
+        errors: errors/kaiko-problem-types.yml
+        lifecycle: lifecycle/kaiko-lifecycle.yml
+      x-rate-limit:
+        standard: 6000 requests per API key per minute
+        throttled_status: 429
+        docs: https://docs.kaiko.com/rest-api/general/getting-started/rate-limiting.md
+      x-response-envelope:
+        fields: [access, data, message, query, result, time, timestamp]
+        docs: https://docs.kaiko.com/rest-api/general/getting-started/envelope.md
+  - target: $.info.description
+    update: >-
+      REST API for Kaiko institutional digital-asset market data. Responses use a JSON
+      envelope (result/message/access/query); pagination via continuation_token and
+      next_url; datasets are versioned via the data_version parameter.

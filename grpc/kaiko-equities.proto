@@ -1,0 +1,828 @@
+syntax = "proto3";
+
+package kaiko.equities;
+
+import "google/protobuf/timestamp.proto";
+
+// Language-specific options for code generation.
+option go_package = "kaiko.equities";
+option java_package = "com.kaiko.equities";
+option java_outer_classname = "EquitiesProto";
+option java_multiple_files = true;
+option csharp_namespace = "Kaiko.Equities";
+option php_namespace = "Kaiko\\Equities";
+option ruby_package = "Kaiko::Equities";
+
+// EquitiesService is a service for getting equities data.
+service EquitiesService {
+  // StreamIndex returns a stream of Index messages filtered by request.
+  rpc StreamIndex(StreamIndexRequest) returns (stream IndexResponse) {}
+  // ReplayIndex returns a stream of historical Index messages within a time range.
+  rpc ReplayIndex(ReplayIndexRequest) returns (stream IndexResponse) {}
+  // CorporateActions returns corporate actions filtered by ISIN and ex-date range.
+  rpc CorporateActions(CorporateActionsRequest) returns (CorporateActionsResponse) {}
+  // MarketCalendarV2 returns market calendar data grouped by timezone for a given date range.
+  rpc MarketCalendarV2(MarketCalendarV2Request) returns (MarketCalendarV2Response) {}
+  // ReferenceData returns TradFi rate reference data filtered by the request criteria.
+  rpc ReferenceData(ReferenceDataRequest) returns (ReferenceDataResponse) {}
+  // StreamFuturesRates streams real-time futures rate computations.
+  rpc StreamFuturesRates(StreamFuturesRatesRequest) returns (stream FuturesRatesResponse) {}
+  // ReplayFuturesRates replays historical futures rate computations within a time range.
+  rpc ReplayFuturesRates(ReplayFuturesRatesRequest) returns (stream FuturesRatesResponse) {}
+  // CorporateActionsOracle returns a signed corporate actions payload for on-chain publishing.
+  rpc CorporateActionsOracle(CorporateActionsOracleRequest) returns (CorporateActionsOracleResponse) {}
+  // StreamForexRates streams real-time forex converted rate data.
+  rpc StreamForexRates(StreamForexRatesRequest) returns (stream ForexRatesResponse) {}
+  // ReplayForexRates replays historical forex converted rate data within a time range.
+  rpc ReplayForexRates(ReplayForexRatesRequest) returns (stream ForexRatesResponse) {}
+  // StreamTopOfBook streams real-time top-of-book (best bid and ask) updates for an equities
+  // exchange (e.g. Nasdaq), optionally filtered to a set of symbols.
+  rpc StreamTopOfBook(StreamTopOfBookRequest) returns (stream TopOfBookResponse) {}
+  // StreamCantonOracle streams signed oracle data and the associated Canton MasterOracle disclosure
+  // for one or more non-crypto feeds (equities, FX, commodities). The disclosure is fetched once per
+  // feed when the stream opens and reused; one payload is emitted per upstream tick, at receipt time.
+  rpc StreamCantonOracle(StreamCantonOracleRequest) returns (stream CantonOracleResponse) {}
+}
+
+// IndexCommodity allows selecting kind of index update wanted.
+enum IndexCommodity {
+  // Unknown commodity.
+  INDEX_COMMODITY_UNKNOWN = 0;
+  // REAL_TIME commodity.
+  INDEX_COMMODITY_REAL_TIME = 1;
+  // DAILY_FIXING commodity.
+  INDEX_COMMODITY_DAILY_FIXING = 2;
+}
+
+// StreamIndexRequest is the request for streaming index equities data.
+message StreamIndexRequest {
+  // Index codes to filter by (e.g., ["KAIKO_US_TECH_100"]).
+  repeated string index_codes = 1;
+  // Commodities to receive (real-time, daily fixing, or both).
+  // If empty, all commodities are returned.
+  repeated IndexCommodity commodities = 2;
+}
+
+// ReplayIndexRequest is the request for replaying historical index equities data.
+message ReplayIndexRequest {
+  // Index codes to filter by (e.g., ["KAIKO_US_TECH_100"]).
+  repeated string index_codes = 1;
+  // Commodities to receive (real-time, daily fixing, or both).
+  // If empty, all commodities are returned.
+  repeated IndexCommodity commodities = 2;
+  // Start time for the replay (inclusive). Will be bounded to max replay interval from now.
+  google.protobuf.Timestamp start_time = 3;
+  // End time for the replay (exclusive). Will be bounded to current time.
+  google.protobuf.Timestamp end_time = 4;
+}
+
+// IndexEquitiesResponse is the response message containing index equities data.
+message IndexResponse {
+  // Index data.
+  Index index = 1;
+  // Session detection method.
+  IndexSessionDetector session_detector = 2;
+}
+
+// IndexSessionDetector represents the session detection method for index equities.
+enum IndexSessionDetector {
+  // Unknown session detection method.
+  INDEX_SESSION_DETECTOR_UNKNOWN = 0;
+  // Early hours session detection.
+  INDEX_SESSION_DETECTOR_EARLY_HOURS = 1;
+  // Regular hours session detection.
+  INDEX_SESSION_DETECTOR_REGULAR_HOURS = 2;
+  // Late hours session detection.
+  INDEX_SESSION_DETECTOR_LATE_HOURS = 3;
+  // Overnight session detection.
+  INDEX_SESSION_DETECTOR_OVERNIGHT = 4;
+  // Closed session detection.
+  INDEX_SESSION_DETECTOR_CLOSED = 5;
+}
+
+// Index is the response message for index data.
+message Index {
+  // Index code.
+  string index_code = 1;
+  // Event type.
+  IndexCommodity commodity = 2;
+  // Data interval.
+  IndexDataInterval interval = 3;
+  // Quote.
+  string quote = 4;
+  // Bases.
+  repeated IndexBaseAsset bases = 5;
+  // Exchanges.
+  repeated string exchanges = 6;
+  // Detailed computation by percentage.
+  repeated IndexPercentage percentages = 7;
+  // Event generation timestamp (event created by Kaiko), after normalization.
+  google.protobuf.Timestamp ts_event = 8;
+  // Sequence ID for event. Sortable in lexicographic order.
+  string sequence_id = 9;
+  // Last internal ingest date used for computation. Useful for replication purposes.
+  google.protobuf.Timestamp last_ingest_time = 10;
+  // Last internal anomaly detection ingest date used for computation. Useful for replication purposes.
+  optional google.protobuf.Timestamp last_anomaly_ingest_time = 11;
+}
+
+// IndexDataInterval represents the time interval for index data.
+message IndexDataInterval {
+  // Starting time (inclusive).
+  google.protobuf.Timestamp start_time = 1;
+  // Ending time (exclusive).
+  google.protobuf.Timestamp end_time = 2;
+}
+
+// IndexBaseAsset is base asset involved in computation.
+message IndexBaseAsset {
+  // Asset.
+  string asset = 1;
+  // Weight.
+  double weight = 2;
+}
+
+// IndexPercentage is computation result by percentage.
+message IndexPercentage {
+  // Percentage.
+  double percentage = 1;
+  // Price computed for the whole percentage.
+  double price = 2;
+  // Detailed computation by pairs.
+  repeated IndexPairs pairs = 3;
+}
+
+// IndexPairs is computation result by pairs.
+message IndexPairs {
+  // Pair.
+  string pair = 1;
+  // Weight (for multiple assets indices).
+  double weight = 2;
+  // Detailed computation by instruments.
+  repeated IndexInstruments instruments = 3;
+}
+
+// IndexInstruments is computation result by instruments.
+message IndexInstruments {
+  // Partition.
+  string partition = 1;
+  // Price.
+  double price = 2;
+  // Volume.
+  double volume = 3;
+  // Count.
+  uint64 count = 4;
+  // Underlying trade for the partition.
+  IndexUnderlyingTrade underlying_trade = 5;
+}
+
+// IndexUnderlyingTrade is underlying trade information for a partition.
+message IndexUnderlyingTrade {
+  // Amount / quantity of asset bought or sold, displayed in base currency.
+  double volume = 1;
+  // Instrument exchange code, for example "cbse" (Coinbase).
+  string exchange = 2;
+  // Trade ID, empty string when not present.
+  string id = 3;
+  // Date of trade.
+  google.protobuf.Timestamp datetime = 4;
+}
+
+// CorporateActionsRequest is the request message for corporate actions.
+message CorporateActionsRequest {
+  // ISINs to filter corporate actions by.
+  repeated string isins = 1;
+  // Start ex-date for filtering (inclusive).
+  optional google.protobuf.Timestamp start_ex_date = 2;
+  // End ex-date for filtering (exclusive).
+  optional google.protobuf.Timestamp end_ex_date = 3;
+}
+
+// CorporateActionsResponse is the response message containing corporate actions.
+message CorporateActionsResponse {
+  // List of corporate actions.
+  repeated CorporateAction corporate_actions = 1;
+}
+
+// CorporateAction represents a corporate action event.
+message CorporateAction {
+  // Unique identifier for the event.
+  string event_unique_id = 1;
+  // Event identifier.
+  string event_id = 2;
+  // Type of corporate action.
+  string action_type = 3;
+  // EDI event code.
+  string edi_event_code = 4;
+  // Status of the corporate action.
+  string status = 5;
+  // Timestamp when the event was created.
+  google.protobuf.Timestamp event_created_at = 6; // protolint:disable:this FIELD_NAMES_EXCLUDE_PREPOSITIONS
+  // Timestamp when the event was last updated.
+  google.protobuf.Timestamp last_updated_at = 7; // protolint:disable:this FIELD_NAMES_EXCLUDE_PREPOSITIONS
+  // Details of the corporate action.
+  CADetails ca_details = 8;
+  // ID details for the corporate action.
+  IDDetails id_details = 9;
+}
+
+// CADetails represents the details of a corporate action.
+message CADetails {
+  // Type of action.
+  string action_type = 1;
+  // Ex-dividend date.
+  google.protobuf.Timestamp ex_date = 2;
+  // Record date.
+  google.protobuf.Timestamp record_date = 3;
+  // Payment date.
+  google.protobuf.Timestamp payment_date = 4;
+  // Currency of the dividend.
+  string currency = 5;
+  // Gross dividend amount.
+  optional double gross_dividend = 6;
+  // Whether the dividend is provisional.
+  bool is_provisional = 7;
+  // Type of dividend.
+  string dividend_type = 8;
+  // Effective date.
+  google.protobuf.Timestamp effective_date = 9;
+  // Old ratio term (SD, DIV(S), BON, CONSD, RTS, ENT, DIST). EDI ratioold.
+  optional double ratio_old = 10;
+  // New ratio term (SD, DIV(S), BON, CONSD, RTS, ENT, DIST). EDI rationew.
+  optional double ratio_new = 11;
+  // Subscription/issue price (rights issue). EDI issueprice.
+  optional double issue_price = 12;
+  // Subscription period start (rights issue). EDI startsubscriptiondt.
+  google.protobuf.Timestamp start_subscription_dt = 13;
+  // Subscription period end (rights issue). EDI endsubscriptiondt.
+  google.protobuf.Timestamp end_subscription_dt = 14;
+  // ISIN of the right/entitlement instrument (rights issue). EDI traisin.
+  string right_isin = 15;
+  // Security id of the right/entitlement instrument (rights issue). EDI trasecid.
+  string right_sec_id = 16;
+  // Merger status (merger). EDI mrgrstatus.
+  string mrgr_status = 17;
+  // Expected completion date (merger). EDI expcompletiondt.
+  google.protobuf.Timestamp exp_completion_dt = 18;
+  // Old par value (capital reduction). EDI parvalueold.
+  optional double par_value_old = 19;
+  // New par value (capital reduction). EDI parvaluenew.
+  optional double par_value_new = 20;
+  // ISIN of the resulting/out instrument (merger, distribution). EDI outisin.
+  string out_isin = 21;
+  // Security id of the resulting/out instrument (merger, distribution). EDI outsecid.
+  string out_sec_id = 22;
+  // Payment type code (merger, dividend): C=Cash, S=Stock, B=Both, D/""=TBC. EDI paytypecd.
+  string pay_type_cd = 23;
+  // Minimum consideration price (merger, cash). EDI minprice.
+  optional double min_price = 24;
+  // Maximum consideration price (merger, cash). EDI maxprice.
+  optional double max_price = 25;
+  // Cash-back / cash consideration per share (takeover, tender offer). EDI cashback.
+  string cash_back = 26;
+  // Offeror name (takeover, tender offer). EDI offerorname.
+  string offeror_name = 27;
+}
+
+// IDDetails represents the ID details of a corporate action.
+message IDDetails {
+  // ISIN identifier.
+  string isin = 1;
+  // Ticker symbol.
+  string ticker = 2;
+  // Issuer name.
+  string issuer_name = 3;
+  // Exchange MIC code.
+  string exchange_mic = 4;
+  // Bloomberg company ID.
+  string bbg_comp_id = 5;
+  // Bloomberg company ticker.
+  string bbg_comp_ticker = 6;
+  // FIGI identifier.
+  string figi = 7;
+  // FIGI ticker.
+  string figi_ticker = 8;
+  // IANA timezone of the asset (e.g. "America/New_York").
+  string timezone = 9;
+}
+
+// MarketCalendarV2Request is the request message for the market calendar v2 endpoint.
+message MarketCalendarV2Request {
+  // Inclusive start date in "YYYY-MM-DD" format.
+  string start_date = 1;
+  // Inclusive end date in "YYYY-MM-DD" format.
+  string end_date = 2;
+  // Required asset class to query (e.g. "equities").
+  string asset_class = 3;
+  // Optional list of exchange codes.
+  repeated string exch = 4; // protolint:disable:this REPEATED_FIELD_NAMES_PLURALIZED
+  // Optional list of timezones (e.g. ["America/New_York"]).
+  repeated string region = 5; // protolint:disable:this REPEATED_FIELD_NAMES_PLURALIZED
+  // Optional list of desired market day statuses.
+  repeated MarketDayStatus status = 6; // protolint:disable:this REPEATED_FIELD_NAMES_PLURALIZED
+  // Optional holiday filter.
+  optional bool is_holiday = 7;
+  // Asset calendar for per-product filtering (e.g. "ice_cocoa", "oil"). Alternative to asset_class.
+  string asset_calendar = 8;
+}
+
+// MarketCalendarV2Response contains the calendar data grouped by timezone.
+message MarketCalendarV2Response {
+  // List of market calendars grouped by timezone.
+  repeated MarketCalendars market_calendars = 1;
+}
+
+// MarketCalendars contains the calendar data for a single timezone group.
+message MarketCalendars {
+  // IANA timezone identifier.
+  string timezone = 1;
+  // Calendar days for this timezone group.
+  repeated MarketCalendarDay data = 2;
+  // Asset class for this timezone group (e.g. "equities").
+  string asset_class = 3;
+}
+
+// MarketCalendarDay represents a single day in the market calendar.
+message MarketCalendarDay {
+  // Date in "YYYY-MM-DD" format.
+  string date = 1;
+  // Exchange MIC codes for this day.
+  repeated string market_mics = 2;
+  // Trading status for this day.
+  MarketDayStatus status = 3;
+  // Whether this day is a holiday.
+  bool is_holiday = 4;
+  // Whether the market is open on this day.
+  bool is_trading_day = 5;
+  // Whether this is a regular trading day.
+  bool is_regular_trading_day = 6;
+  // Reason for the status (e.g. "Weekend", "Christmas").
+  string reason = 7;
+  // Previous regular trading day (RFC3339 with timezone offset).
+  string previous_regular_trading_day = 8;
+  // Next regular trading day (RFC3339 with timezone offset).
+  string next_regular_trading_day = 9;
+  // Session schedule for this day.
+  repeated SessionEntry session_schedule = 10; // protolint:disable:this REPEATED_FIELD_NAMES_PLURALIZED
+}
+
+// MarketDayStatus represents the trading status of a market day.
+enum MarketDayStatus {
+  // Unknown status.
+  MARKET_DAY_STATUS_UNKNOWN = 0;
+  // Market is closed.
+  CLOSED = 1;
+  // Market is open with regular hours.
+  OPEN_REGULAR = 2;
+  // Market is open with irregular hours.
+  OPEN_IRREGULAR = 3;
+}
+
+// SessionEntry represents a single trading session.
+message SessionEntry {
+  // Exchange MICs this session belongs to.
+  repeated string exchanges = 1;
+  // Phase type (e.g. "Pre-Trading Session", "Primary Trading Session").
+  string phase_type = 2;
+  // Session description.
+  string description = 3;
+  // Session start time in RFC3339 format with original offset.
+  string start = 4;
+  // Session end time in RFC3339 format with original offset.
+  string end = 5;
+  // Whether this session is for actual trading.
+  bool is_trading = 6;
+}
+
+// StreamFuturesRatesRequest is the request message for streaming futures rates.
+message StreamFuturesRatesRequest {
+  // Index codes to subscribe to, e.g. ["KK_FR_MCAUSD"].
+  repeated string index_codes = 1;
+}
+
+// ReplayFuturesRatesRequest is the request message for replaying historical futures rates.
+message ReplayFuturesRatesRequest {
+  // Index codes to filter by, e.g. ["KK_FR_MCAUSD"].
+  repeated string index_codes = 1;
+  // Start time for the replay (inclusive).
+  google.protobuf.Timestamp start_time = 2;
+  // End time for the replay (exclusive).
+  google.protobuf.Timestamp end_time = 3;
+}
+
+// FuturesRatesResponse is a single futures rate update.
+message FuturesRatesResponse {
+  // Index code.
+  string index_code = 1;
+  // Final computed price.
+  double price = 2;
+  // Blended futures price before discount.
+  double blended_price = 3;
+  // Discount factor (dt_final).
+  double dt_final = 4;
+  // Time to maturity in seconds.
+  double ttm = 5;
+  // Timestamp of the computation.
+  google.protobuf.Timestamp timestamp = 6;
+  // Start time of the computation interval.
+  google.protobuf.Timestamp start_time = 7;
+  // End time of the computation interval.
+  google.protobuf.Timestamp end_time = 8;
+  // Front future details.
+  FuturesDetail front_future = 9;
+  // Back future details.
+  FuturesDetail back_future = 10;
+  // Spot rate used for discount factor computation.
+  FuturesSpotRate spot_rate = 11;
+  // Quote currency.
+  string quote = 12;
+  // Exchanges.
+  repeated string exchanges = 13;
+  // Sequence ID.
+  string sequence_id = 14;
+  // Session detection method.
+  IndexSessionDetector session_detector = 15;
+}
+
+// FuturesDetail holds details about a single future contract.
+message FuturesDetail {
+  // Instrument symbol, e.g. "mcaj6".
+  string symbol = 1;
+  // Computed price.
+  double price = 2;
+  // Expiry date.
+  google.protobuf.Timestamp expiry = 3;
+  // Weight applied in the blended price.
+  double weight = 4;
+  // Partition-level computation detail.
+  repeated FuturesPair pairs = 5;
+}
+
+// FuturesPair holds the computation detail for a single trading pair.
+message FuturesPair {
+  // Trading pair, e.g. "sbfmk0026-usx".
+  string pair = 1;
+  // Partition-level instrument details.
+  repeated FuturesPartition instruments = 2;
+}
+
+// FuturesPartition holds the computation detail for a single partition.
+message FuturesPartition {
+  // Partition identifier.
+  string partition = 1;
+  // Computed price for this partition.
+  double price = 2;
+  // Volume in this partition.
+  double volume = 3;
+  // Number of trades in this partition.
+  uint64 count = 4;
+  // Last underlying trade in this partition.
+  FuturesTrade trade = 5;
+}
+
+// FuturesTrade holds the last underlying trade for a partition.
+message FuturesTrade {
+  // Exchange code, e.g. "icus".
+  string exchange = 1;
+  // Trade ID.
+  string id = 2;
+  // Trade timestamp.
+  google.protobuf.Timestamp datetime = 3;
+  // Trade volume.
+  double volume = 4;
+}
+
+// FuturesSpotRate holds the spot rate used for discount factor computation.
+message FuturesSpotRate {
+  // Index code of the spot rate.
+  string index_code = 1;
+  // Spot rate price.
+  double price = 2;
+}
+
+// ReferenceDataRequest is the request message for reference data.
+message ReferenceDataRequest {
+  // Filter by index codes (e.g. ["KK_RFR_AAPLUSD"]).
+  repeated string tickers = 1;
+  // Filter by base asset codes (e.g. ["aapl", "spy"]).
+  repeated string base_asset_codes = 2;
+  // Filter by base asset classes (e.g. ["equity", "equity_etf"]).
+  repeated string base_asset_classes = 3;
+  // Filter by base asset ISINs (e.g. ["US0378331005"]).
+  repeated string base_asset_isins = 4;
+  // Filter by quote asset codes (e.g. ["usd", "hkd"]).
+  repeated string quote_asset_codes = 5;
+  // Filter by timezones (e.g. ["America/New_York"]).
+  repeated string timezones = 6; // protolint:disable:this REPEATED_FIELD_NAMES_PLURALIZED
+  // Filter by exposition (e.g. ["public", "private"]).
+  repeated string exposition = 7; // protolint:disable:this REPEATED_FIELD_NAMES_PLURALIZED
+  // Filter by stream endpoint (e.g. ["StreamIndex", "StreamFuturesRates", "StreamForexRates"]).
+  repeated string stream_endpoints = 8; // protolint:disable:this REPEATED_FIELD_NAMES_PLURALIZED
+}
+
+// ReferenceDataResponse is the response message for reference data.
+message ReferenceDataResponse {
+  // List of reference data entries.
+  repeated ReferenceDataEntry entries = 1;
+}
+
+// ReferenceDataEntry represents a single rate in the reference data catalogue.
+message ReferenceDataEntry {
+  // Index code (e.g. "KK_RFR_AAPLUSD").
+  string index_code = 1;
+  // Derived rate name (e.g. "Kaiko Apple USD Equity Reference Rate").
+  string rate_name = 2;
+  // Removed: use base_asset.asset_class or base_asset.taxonomy.asset_class instead.
+  reserved 3;
+  reserved "asset_class";
+  // Trading pair (e.g. "AAPL-USD").
+  string pair = 4;
+  // List of exchange codes.
+  repeated string exchanges = 5;
+  // Base asset information.
+  ReferenceBaseAsset base_asset = 6;
+  // Quote asset information.
+  ReferenceQuoteAsset quote_asset = 7;
+  // Dissemination type (e.g. "Real-time", "Daily fixing").
+  string dissemination = 8;
+  // IANA timezone.
+  string timezone = 9;
+  // Launch date in YYYY-MM-DD format.
+  string launch_date = 10;
+  // Exposition level (e.g. "public", "private").
+  string exposition = 11;
+  // Stream endpoint method name (e.g. "StreamIndex", "StreamFuturesRates", "StreamForexRates").
+  string stream_endpoint = 12;
+  // Methodology version (e.g. "3.3.2").
+  string methodology = 13;
+  // Asset calendar or asset class used for market session detection.
+  string asset_calendar = 14;
+}
+
+// ReferenceBaseAsset holds base asset reference data.
+message ReferenceBaseAsset {
+  // Asset code (e.g. "aapl").
+  string asset_code = 1;
+  // Removed: use taxonomy.asset_class instead.
+  reserved 2;
+  reserved "asset_class";
+  // Removed.
+  reserved 3;
+  reserved "instrument";
+  // Human-readable name (e.g. "Apple").
+  string name = 4;
+  // ISIN identifier.
+  string isin = 5;
+  // Bloomberg company ID.
+  string bbg_comp_id = 6;
+  // IANA timezone.
+  string timezone = 7;
+  // Kaiko taxonomy classification.
+  ReferenceTaxonomy taxonomy = 8;
+}
+
+// ReferenceQuoteAsset holds quote asset reference data.
+message ReferenceQuoteAsset {
+  // Asset code (e.g. "usd").
+  string asset_code = 1;
+  // Removed.
+  reserved 2;
+  reserved "asset_class";
+  // Human-readable name (e.g. "US Dollar").
+  string name = 3;
+}
+
+// ReferenceTaxonomy holds Kaiko taxonomy classification.
+message ReferenceTaxonomy {
+  // Version of the taxonomy (e.g. "1.0").
+  string taxonomy_version = 1;
+  // Kaiko taxonomy code (e.g. "EQ.STK.SPOT.XCHG.US").
+  string kaiko_taxonomy_code = 2;
+  // Asset class (e.g. "Equity", "ETF").
+  string asset_class = 3;
+  // Instrument type (e.g. "Stock", "Fund").
+  string instrument_type = 4;
+  // Market phase (e.g. "Spot", "Futures").
+  string market_phase = 5;
+  // Market venue (e.g. "Exchange", "OTC").
+  string market_venue = 6;
+  // Geographic region (e.g. "Americas", "APAC").
+  string geo_region = 7;
+  // Geographic country (e.g. "US", "HK").
+  string geo_country = 8;
+}
+
+// CorporateActionsOracleRequest is the request message for the oracle endpoint.
+message CorporateActionsOracleRequest {
+  // ISINs to include in the oracle payload (max 10, must be in the allowed list).
+  repeated string isins = 1;
+  // Optional start ex-date for the window (defaults to now - 30 days).
+  optional google.protobuf.Timestamp start_ex_date = 2;
+  // Optional end ex-date for the window (defaults to now + 180 days).
+  optional google.protobuf.Timestamp end_ex_date = 3;
+}
+
+// OracleWindow describes the ex-date window covered by the oracle payload.
+message OracleWindow {
+  // Start ex-date in YYYY-MM-DD format (exclusive).
+  string start_ex_date = 1;
+  // End ex-date in YYYY-MM-DD format (exclusive).
+  string end_ex_date = 2; // protolint:disable:this FIELD_NAMES_EXCLUDE_PREPOSITIONS
+}
+
+// OracleEvent is a single corporate action event in the oracle payload.
+// Dividend economics (currency, gross_dividend, etc.) are intentionally omitted.
+message OracleEvent {
+  // Unique identifier for the event.
+  string event_unique_id = 1;
+  // Event identifier.
+  string event_id = 2;
+  // EDI event code.
+  string edi_event_code = 3;
+  // Type of corporate action.
+  string action_type = 4;
+  // Status of the corporate action.
+  string status = 5;
+  // Timestamp when the event was created.
+  google.protobuf.Timestamp event_created_at = 6; // protolint:disable:this FIELD_NAMES_EXCLUDE_PREPOSITIONS
+  // Corporate action details (dividend economics stripped).
+  CADetails ca_details = 7;
+  // Timestamp when the event was last updated.
+  google.protobuf.Timestamp last_updated_at = 8; // protolint:disable:this FIELD_NAMES_EXCLUDE_PREPOSITIONS
+}
+
+// OracleItem groups oracle events by ISIN.
+message OracleItem {
+  // ISIN and related identifiers.
+  IDDetails id_details = 1;
+  // True if the event list was truncated to the per-ISIN cap.
+  bool is_truncated = 2;
+  // Events for this ISIN within the oracle window.
+  repeated OracleEvent events = 3;
+}
+
+// CorporateActionsOracleResponse is the signed oracle payload returned to the caller.
+message CorporateActionsOracleResponse {
+  // Schema version, always "kaiko.ca.oracle.v1".
+  string schema_version = 1;
+  // ISO-8601 UTC timestamp when the payload was generated.
+  string generated_at = 2; // protolint:disable:this FIELD_NAMES_EXCLUDE_PREPOSITIONS
+  // The ex-date window covered by this payload.
+  OracleWindow window = 3;
+  // One entry per requested ISIN, sorted by ISIN ascending.
+  repeated OracleItem items = 4;
+  // 0x-prefixed hex-encoded ECDSA secp256k1 signature over the unsigned payload JSON.
+  string signature = 5;
+}
+
+// StreamForexRatesRequest is the request for streaming forex converted rate data.
+message StreamForexRatesRequest {
+  // Index codes to filter by (e.g., ["KK_RFR_AAPLUSD_EUR"]).
+  repeated string index_codes = 1;
+}
+
+// ReplayForexRatesRequest is the request for replaying historical forex converted rate data.
+message ReplayForexRatesRequest {
+  // Index codes to filter by (e.g., ["KK_RFR_AAPLUSD_EUR"]).
+  repeated string index_codes = 1;
+  // Start time for the replay (inclusive). Bounded to max replay interval from now.
+  google.protobuf.Timestamp start_time = 2;
+  // End time for the replay (exclusive). Defaults to current time.
+  google.protobuf.Timestamp end_time = 3;
+}
+
+// ForexRatesResponse is a single forex converted rate message.
+message ForexRatesResponse {
+  // Forex index code (e.g., "KK_RFR_AAPLUSD_EUR").
+  string index_code = 1;
+  // Final converted price (underlying * fx_rate, or underlying / fx_rate if inverse).
+  double price = 2;
+  // Event timestamp.
+  google.protobuf.Timestamp ts_event = 3;
+  // Composition details showing underlying and FX rate components.
+  ForexRatesComposition composition = 4;
+}
+
+// ForexRatesComposition describes the components of a forex converted rate.
+message ForexRatesComposition {
+  // Underlying rate component.
+  ForexRatesComponent underlying = 1;
+  // FX conversion rate component.
+  ForexRatesComponent fx_rate = 2;
+}
+
+// ForexRatesComponent is one component (underlying or FX rate) of a forex conversion.
+message ForexRatesComponent {
+  // Index code of the component (e.g., "KK_RFR_AAPLUSD" or "KK_RFR_EURUSD").
+  string name = 1;
+  // Price of the component.
+  double price = 2;
+  // Event timestamp of the component.
+  google.protobuf.Timestamp ts_event = 3;
+}
+
+// StreamTopOfBookRequest is the request for streaming equities top-of-book data.
+// protolint:disable:next MESSAGE_NAMES_EXCLUDE_PREPOSITIONS
+message StreamTopOfBookRequest {
+  // Exchange code to subscribe to (e.g. "nsdq" for Nasdaq). Required.
+  string exchange_code = 1;
+  // Symbols to filter by (e.g. ["AAPL", "MSFT"]). If empty, every symbol on the
+  // exchange is streamed.
+  repeated string symbols = 2;
+}
+
+// TopOfBookResponse is a single two-sided top-of-book snapshot for one instrument.
+// protolint:disable:next MESSAGE_NAMES_EXCLUDE_PREPOSITIONS
+message TopOfBookResponse {
+  // Exchange code (e.g. "nsdq").
+  string exchange_code = 1;
+  // Instrument symbol (e.g. "AAPL").
+  string symbol = 2;
+  // Best bid (highest buy order).
+  TopOfBookLevel bid = 3;
+  // Best ask (lowest sell order).
+  TopOfBookLevel ask = 4;
+  // Exchange-supplied timestamp of the snapshot.
+  google.protobuf.Timestamp timestamp = 5;
+  // Asset class of the instrument (e.g. CLASS_EQUITIES).
+  Class class = 6;
+  // Update type. UPDATE_TYPE_BBO denotes a two-sided best bid and ask snapshot.
+  UpdateType update_type = 7;
+}
+
+// TopOfBookLevel is one side (bid or ask) of a top-of-book snapshot.
+// protolint:disable:next MESSAGE_NAMES_EXCLUDE_PREPOSITIONS
+message TopOfBookLevel {
+  // Price.
+  double price = 1;
+  // Quantity available at this price.
+  double quantity = 2;
+}
+
+// Class is the asset class of an instrument.
+enum Class {
+  // Unknown / unset asset class.
+  CLASS_UNKNOWN = 0;
+  // Cash equities (stocks and ETFs).
+  CLASS_EQUITIES = 1;
+}
+
+// UpdateType describes the kind of top-of-book update carried by a TopOfBookResponse.
+enum UpdateType {
+  // Unknown / unset update type.
+  UPDATE_TYPE_UNKNOWN = 0;
+  // Two-sided best bid and offer snapshot.
+  UPDATE_TYPE_BBO = 1;
+}
+
+// StreamCantonOracleRequest contains the feeds to multiplex on a single Canton oracle stream.
+message StreamCantonOracleRequest {
+  // feeds is the list of feeds to subscribe to (at least one).
+  repeated CantonOracleFeed feeds = 1;
+  // network selects the Canton network to stream from. Required; must be "mainnet" or "testnet".
+  string network = 2;
+}
+
+// CantonOracleFeed identifies a single Canton oracle feed by category and id.
+message CantonOracleFeed {
+  // feedCategory is the type of data, e.g. equities, fx or commodities.
+  string feed_category = 1;
+  // feedID is the ID of the feed, e.g. an index code such as KAIKO_US_TECH_100.
+  string feed_id = 2;
+}
+
+// CantonOracleResponse contains the signed oracle data and the Canton MasterOracle disclosure.
+message CantonOracleResponse {
+  // data contains the signed oracle data payload.
+  CantonOracleData data = 1;
+  // canton_oracle contains the MasterOracle disclosure for contract interaction.
+  CantonOraclePayload canton_oracle = 2;
+}
+
+// CantonOracleData contains the oracle data information for a single feed.
+message CantonOracleData {
+  // name is the ID of the feed.
+  string name = 1;
+  // value is the value of the rate. It is unset when the upstream tick carries no price (e.g. the
+  // market is closed); such ticks are still emitted and still signed (the value is signed as an
+  // empty string), so the signature remains verifiable with the value left unset.
+  optional int64 value = 2;
+  // decimal specifies that the actual value must be equal to value * 10e-{decimal}.
+  int32 decimal = 3;
+  // timestamp is the millisecond UTC epoch of the value.
+  int64 timestamp = 4;
+  // signature is the DER formatted SECP256K1 signature of the SHA-256 hash of the concatenation of all fields in the data payload.
+  string signature = 5;
+}
+
+// CantonOraclePayload is a JSON payload that allows the client to use the KaikoOraclePull contract and publish their own price.
+message CantonOraclePayload {
+  // templateId for the canton contract template.
+  string template_id = 1;
+  // contractId for the canton contract.
+  string contract_id = 2;
+  // synchronizerId for the canton synchronizer.
+  string synchronizer_id = 3;
+  // createdEventBlob contains the serialized contract event data.
+  string created_event_blob = 4;
+}

@@ -1,0 +1,20 @@
+{
+  "provider": "kaiko",
+  "sources": [
+    "kaiko-canton-oracle-api-openapi.yml",
+    "kaiko-index-reference-data-api-openapi.yml",
+    "kaiko-indices-api-openapi.yml",
+    "kaiko-supply-api-openapi.yml"
+  ],
+  "outputs": [
+    "kaiko-canton-oracle-api-openapi.yml",
+    "kaiko-index-reference-data-api-openapi.yml",
+    "kaiko-indices-api-openapi.yml",
+    "kaiko-supply-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
