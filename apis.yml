@@ -180,6 +180,8 @@ apis:
   - type: Overlay
     url: overlays/kaiko-supply-api-overlay.yaml
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/kaiko/overview
   - type: AgenticAccess
     url: agentic-access/kaiko-agentic-access.yml
   - type: DomainSecurity
