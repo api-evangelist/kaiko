@@ -1,0 +1,144 @@
+{
+  "info": {
+    "_postman_id": "ddce32f8-fbb3-4607-8575-60f18ab524ba",
+    "name": "Kaiko Market Data REST Canton Oracle Indices API",
+    "description": "REST API for accessing Kaiko's institutional-grade digital-asset market data, including Canton oracle prices, reference rates, indices, index replication rates, and supply / market-cap data. All requests are authenticated with an X-Api-Key header carrying the client's Kaiko API key.\n\nContact Support:\n Name: Kaiko Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:59:45.000Z",
+    "updatedAt": "2026-07-28T01:59:45.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ddce32f8-fbb3-4607-8575-60f18ab524ba"
+  },
+  "item": [
+    {
+      "name": "data",
+      "item": [
+        {
+          "name": "index.v1",
+          "item": [
+            {
+              "name": "digital_asset_rates_compo",
+              "item": [
+                {
+                  "name": "Get digital asset index composition",
+                  "id": "c366e40c-d41e-40c8-9330-45d558af293d",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/data/index.v1/digital_asset_rates_compo",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "data",
+                        "index.v1",
+                        "digital_asset_rates_compo"
+                      ]
+                    },
+                    "description": "Return index composition data for Kaiko's digital-asset rate indices."
+                  },
+                  "response": [
+                    {
+                      "id": "4c8c69ec-9bb9-4e6f-bc0d-970ecafd35db",
+                      "name": "Index composition payload.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "X-Api-Key",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/data/index.v1/digital_asset_rates_compo",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "data",
+                            "index.v1",
+                            "digital_asset_rates_compo"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T01:59:45.000Z",
+                      "updatedAt": "2026-07-28T01:59:45.000Z",
+                      "uid": "35240-4c8c69ec-9bb9-4e6f-bc0d-970ecafd35db"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:59:45.000Z",
+                  "updatedAt": "2026-07-28T01:59:45.000Z",
+                  "uid": "35240-c366e40c-d41e-40c8-9330-45d558af293d"
+                }
+              ],
+              "id": "2137a3d4-6ae5-47c9-8a75-b77216bced40",
+              "createdAt": "2026-07-28T01:59:45.000Z",
+              "updatedAt": "2026-07-28T01:59:45.000Z",
+              "uid": "35240-2137a3d4-6ae5-47c9-8a75-b77216bced40"
+            }
+          ],
+          "id": "7535f14b-010b-42be-a76b-2e364e2f74f9",
+          "createdAt": "2026-07-28T01:59:45.000Z",
+          "updatedAt": "2026-07-28T01:59:45.000Z",
+          "uid": "35240-7535f14b-010b-42be-a76b-2e364e2f74f9"
+        }
+      ],
+      "id": "e3300e1a-4de4-4802-89d6-019e23c928a5",
+      "createdAt": "2026-07-28T01:59:45.000Z",
+      "updatedAt": "2026-07-28T01:59:45.000Z",
+      "uid": "35240-e3300e1a-4de4-4802-89d6-019e23c928a5"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Api-Key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://us.market-api.kaiko.io/v2"
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "info": {
+    "_postman_id": "b63c0779-f5df-41a0-aa81-4a246f8bdaf3",
+    "name": "Kaiko Market Data REST Canton Oracle API",
+    "description": "REST API for accessing Kaiko's institutional-grade digital-asset market data, including Canton oracle prices, reference rates, indices, index replication rates, and supply / market-cap data. All requests are authenticated with an X-Api-Key header carrying the client's Kaiko API key.\n\nContact Support:\n Name: Kaiko Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:59:43.000Z",
+    "updatedAt": "2026-07-28T01:59:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b63c0779-f5df-41a0-aa81-4a246f8bdaf3"
+  },
+  "item": [
+    {
+      "name": "data",
+      "item": [
+        {
+          "name": "canton",
+          "item": [
+            {
+              "name": "oracle",
+              "item": [
+                {
+                  "name": "price",
+                  "item": [
+                    {
+                      "name": "btc-usd",
+                      "item": [
+                        {
+                          "name": "Get Canton oracle BTC-USD price",
+                          "id": "bec62beb-c349-4cc6-abcd-7f6e7d4d3a28",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/data/canton/oracle/price/btc-usd",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "data",
+                                "canton",
+                                "oracle",
+                                "price",
+                                "btc-usd"
+                              ]
+                            },
+                            "description": "Return the current Canton oracle price for the BTC-USD pair."
+                          },
+                          "response": [
+                            {
+                              "id": "6a998218-49a1-45ac-a627-84b91b556873",
+                              "name": "Canton oracle price payload.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "X-Api-Key",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/data/canton/oracle/price/btc-usd",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "data",
+                                    "canton",
+                                    "oracle",
+                                    "price",
+                                    "btc-usd"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:59:44.000Z",
+                              "updatedAt": "2026-07-28T01:59:44.000Z",
+                              "uid": "35240-6a998218-49a1-45ac-a627-84b91b556873"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:59:44.000Z",
+                          "updatedAt": "2026-07-28T01:59:44.000Z",
+                          "uid": "35240-bec62beb-c349-4cc6-abcd-7f6e7d4d3a28"
+                        }
+                      ],
+                      "id": "f2a43eec-4969-42ac-9d53-eccdd2348134",
+                      "createdAt": "2026-07-28T01:59:44.000Z",
+                      "updatedAt": "2026-07-28T01:59:44.000Z",
+                      "uid": "35240-f2a43eec-4969-42ac-9d53-eccdd2348134"
+                    }
+                  ],
+                  "id": "be494f7a-86e9-4557-805a-c0b21258198d",
+                  "createdAt": "2026-07-28T01:59:44.000Z",
+                  "updatedAt": "2026-07-28T01:59:44.000Z",
+                  "uid": "35240-be494f7a-86e9-4557-805a-c0b21258198d"
+                },
+                {
+                  "name": "brr",
+                  "item": [
+                    {
+                      "name": "btc-usd",
+                      "item": [
+                        {
+                          "name": "Get Canton oracle BTC-USD BRR",
+                          "id": "67c76228-84e5-46de-a5d7-b7069f98cd88",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/data/canton/oracle/brr/btc-usd",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "data",
+                                "canton",
+                                "oracle",
+                                "brr",
+                                "btc-usd"
+                              ]
+                            },
+                            "description": "Return the current Canton oracle BRR (Benchmark Reference Rate) for BTC-USD."
+                          },
+                          "response": [
+                            {
+                              "id": "c885ca78-dad3-45b5-935d-6a077473b0b3",
+                              "name": "Canton oracle BRR payload.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "X-Api-Key",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/data/canton/oracle/brr/btc-usd",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "data",
+                                    "canton",
+                                    "oracle",
+                                    "brr",
+                                    "btc-usd"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:59:44.000Z",
+                              "updatedAt": "2026-07-28T01:59:44.000Z",
+                              "uid": "35240-c885ca78-dad3-45b5-935d-6a077473b0b3"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:59:44.000Z",
+                          "updatedAt": "2026-07-28T01:59:44.000Z",
+                          "uid": "35240-67c76228-84e5-46de-a5d7-b7069f98cd88"
+                        }
+                      ],
+                      "id": "b97a23d3-d4e3-40b3-9a1c-5b6dd6c96af3",
+                      "createdAt": "2026-07-28T01:59:44.000Z",
+                      "updatedAt": "2026-07-28T01:59:44.000Z",
+                      "uid": "35240-b97a23d3-d4e3-40b3-9a1c-5b6dd6c96af3"
+                    }
+                  ],
+                  "id": "9efe0c94-53c0-43af-8881-6e9ea79f9952",
+                  "createdAt": "2026-07-28T01:59:44.000Z",
+                  "updatedAt": "2026-07-28T01:59:44.000Z",
+                  "uid": "35240-9efe0c94-53c0-43af-8881-6e9ea79f9952"
+                }
+              ],
+              "id": "f7e3a767-0ba5-4623-9706-56a279087038",
+              "createdAt": "2026-07-28T01:59:44.000Z",
+              "updatedAt": "2026-07-28T01:59:44.000Z",
+              "uid": "35240-f7e3a767-0ba5-4623-9706-56a279087038"
+            }
+          ],
+          "id": "d3386252-b737-44d3-aeab-effa0228cf09",
+          "createdAt": "2026-07-28T01:59:44.000Z",
+          "updatedAt": "2026-07-28T01:59:44.000Z",
+          "uid": "35240-d3386252-b737-44d3-aeab-effa0228cf09"
+        }
+      ],
+      "id": "3729064a-bb63-431c-b7c3-1528b439b89a",
+      "createdAt": "2026-07-28T01:59:44.000Z",
+      "updatedAt": "2026-07-28T01:59:44.000Z",
+      "uid": "35240-3729064a-bb63-431c-b7c3-1528b439b89a"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Api-Key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://us.market-api.kaiko.io/v2"
+    }
+  ]
+}
