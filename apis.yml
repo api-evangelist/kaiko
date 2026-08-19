@@ -27,7 +27,7 @@ tags:
   - Streaming
 created: '2026-05-08'
 modified: '2026-07-22'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 description: >-
   Kaiko is an institutional-grade crypto market data provider. Its product line spans Kaiko REST
   (historical and reference data), Kaiko Stream (real-time WebSocket and gRPC), Cloud Delivery
