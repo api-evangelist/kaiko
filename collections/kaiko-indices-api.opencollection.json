@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kaiko Market Data REST Canton Oracle Indices API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Api-Key",
+      "value": "{{X-Api-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Indices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get digital asset index composition",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.market-api.kaiko.io/v2/data/index.v1/digital_asset_rates_compo"
+          },
+          "docs": "Return index composition data for Kaiko's digital-asset rate indices."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

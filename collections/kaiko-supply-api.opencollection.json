@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kaiko Market Data REST Canton Oracle Supply API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Api-Key",
+      "value": "{{X-Api-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Supply",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get top market-cap rankings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.market-api.kaiko.io/v2/data/supply.v2/top"
+          },
+          "docs": "Return market-capitalization rankings for top assets."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

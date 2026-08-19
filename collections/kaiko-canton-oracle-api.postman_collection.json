@@ -1,0 +1,221 @@
+{
+  "item": [
+    {
+      "id": "010eb52b-7e73-4834-887e-3bc340cb370d",
+      "name": "Canton Oracle",
+      "description": {
+        "content": "Canton oracle pricing endpoints.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ec6f7f01-8489-4a63-947d-4b692cced1a3",
+          "name": "Get Canton oracle BTC-USD price",
+          "request": {
+            "name": "Get Canton oracle BTC-USD price",
+            "description": {
+              "content": "Return the current Canton oracle price for the BTC-USD pair.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "canton",
+                "oracle",
+                "price",
+                "btc-usd"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6c2b7dc9-2f36-4cb4-bffc-471a8244cc3a",
+              "name": "Canton oracle price payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "canton",
+                    "oracle",
+                    "price",
+                    "btc-usd"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3376c653-b869-4e31-b323-ccf5226a307c",
+          "name": "Get Canton oracle BTC-USD BRR",
+          "request": {
+            "name": "Get Canton oracle BTC-USD BRR",
+            "description": {
+              "content": "Return the current Canton oracle BRR (Benchmark Reference Rate) for BTC-USD.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "canton",
+                "oracle",
+                "brr",
+                "btc-usd"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f5399b4d-04e8-4d7b-af8b-f5fe27ef2948",
+              "name": "Canton oracle BRR payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "canton",
+                    "oracle",
+                    "brr",
+                    "btc-usd"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us.market-api.kaiko.io/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Api-Key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e747b36e-085e-4717-85dc-cc01f76444f1",
+    "name": "Kaiko Market Data REST Canton Oracle API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for accessing Kaiko's institutional-grade digital-asset market data, including Canton oracle prices, reference rates, indices, index replication rates, and supply / market-cap data. All requests are authenticated with an X-Api-Key header carrying the client's Kaiko API key.\n\nContact Support:\n Name: Kaiko Support",
+      "type": "text/plain"
+    }
+  }
+}

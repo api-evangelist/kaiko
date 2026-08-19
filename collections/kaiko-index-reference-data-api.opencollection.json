@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kaiko Market Data REST Canton Oracle Index Reference Data API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Api-Key",
+      "value": "{{X-Api-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Index Reference Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get index reference rates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.market-api.kaiko.io/v2/data/index_reference_data.v1/rates"
+          },
+          "docs": "Return reference-rate data for Kaiko indices."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

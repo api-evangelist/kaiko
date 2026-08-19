@@ -1,0 +1,131 @@
+{
+  "item": [
+    {
+      "id": "63e4edb0-f26b-40a3-b2ce-06f6362587cc",
+      "name": "Index Reference Data",
+      "description": {
+        "content": "Reference-rate data for Kaiko indices.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9fdbd0b7-9b6b-40aa-87d2-680e8c1f4cf4",
+          "name": "Get index reference rates",
+          "request": {
+            "name": "Get index reference rates",
+            "description": {
+              "content": "Return reference-rate data for Kaiko indices.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "index_reference_data.v1",
+                "rates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d8f1fde9-fa66-44ed-989c-10ba2f78cbf4",
+              "name": "Reference-rate payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "index_reference_data.v1",
+                    "rates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us.market-api.kaiko.io/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Api-Key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f76a22dc-1864-487a-b352-4278dc029a32",
+    "name": "Kaiko Market Data REST Canton Oracle Index Reference Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for accessing Kaiko's institutional-grade digital-asset market data, including Canton oracle prices, reference rates, indices, index replication rates, and supply / market-cap data. All requests are authenticated with an X-Api-Key header carrying the client's Kaiko API key.\n\nContact Support:\n Name: Kaiko Support",
+      "type": "text/plain"
+    }
+  }
+}

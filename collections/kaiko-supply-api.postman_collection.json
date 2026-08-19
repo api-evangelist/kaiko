@@ -1,0 +1,131 @@
+{
+  "item": [
+    {
+      "id": "04027db2-148f-4001-9082-e8c7fe425252",
+      "name": "Supply",
+      "description": {
+        "content": "Asset supply and market-capitalization rankings.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0f4fcd8d-6667-4771-a014-d020ed3d1eeb",
+          "name": "Get top market-cap rankings",
+          "request": {
+            "name": "Get top market-cap rankings",
+            "description": {
+              "content": "Return market-capitalization rankings for top assets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "supply.v2",
+                "top"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "50b6b677-a46a-4dff-9f82-8d921da4b293",
+              "name": "Supply ranking payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "supply.v2",
+                    "top"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us.market-api.kaiko.io/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Api-Key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4bfa086c-80c3-4033-b46d-053fd165b499",
+    "name": "Kaiko Market Data REST Canton Oracle Supply API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for accessing Kaiko's institutional-grade digital-asset market data, including Canton oracle prices, reference rates, indices, index replication rates, and supply / market-cap data. All requests are authenticated with an X-Api-Key header carrying the client's Kaiko API key.\n\nContact Support:\n Name: Kaiko Support",
+      "type": "text/plain"
+    }
+  }
+}

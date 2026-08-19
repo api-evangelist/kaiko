@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kaiko Market Data REST Canton Oracle API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Api-Key",
+      "value": "{{X-Api-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Canton Oracle",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Canton oracle BTC-USD price",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.market-api.kaiko.io/v2/data/canton/oracle/price/btc-usd"
+          },
+          "docs": "Return the current Canton oracle price for the BTC-USD pair."
+        },
+        {
+          "info": {
+            "name": "Get Canton oracle BTC-USD BRR",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us.market-api.kaiko.io/v2/data/canton/oracle/brr/btc-usd"
+          },
+          "docs": "Return the current Canton oracle BRR (Benchmark Reference Rate) for BTC-USD."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
