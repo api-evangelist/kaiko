@@ -23,6 +23,15 @@ tags:
   - Institutional
   - FX
   - Indices
+  - Onchain
+  - Streaming
+tags_raw:
+  - Web3
+  - Crypto
+  - Market Data
+  - Institutional
+  - FX
+  - Indices
   - On-Chain
   - Streaming
 created: '2026-05-08'
@@ -64,6 +73,10 @@ apis:
   name: Kaiko Stream
   tags:
   - Streaming
+  - Real-Time
+  - gRPC
+  tags_raw:
+  - Streaming
   - Real-time
   - gRPC
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
@@ -92,6 +105,11 @@ apis:
 - aid: kaiko:on-chain-api
   name: Kaiko On-chain API
   tags:
+  - Onchain
+  - DEX
+  - Liquidity
+  - Multi-Chain
+  tags_raw:
   - On-Chain
   - DEX
   - Liquidity
@@ -114,6 +132,10 @@ apis:
 - aid: kaiko:indices
   name: Kaiko Indices
   tags:
+  - Indices
+  - Benchmarks
+  - Regulated
+  tags_raw:
   - Indices
   - Benchmark
   - Regulated
