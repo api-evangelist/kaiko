@@ -35,7 +35,7 @@ tags:
   - Institutional
   - FX
   - Indices
-  - Onchain
+  - On-Chain
   - Streaming
 tags_raw:
   - Web3
@@ -117,10 +117,10 @@ apis:
 - aid: kaiko:on-chain-api
   name: Kaiko On-chain API
   tags:
-  - Onchain
+  - On-Chain
   - DEX
   - Liquidity
-  - Multi-Chain
+  - Multi-chain
   tags_raw:
   - On-Chain
   - DEX
@@ -145,7 +145,7 @@ apis:
   name: Kaiko Indices
   tags:
   - Indices
-  - Benchmarks
+  - Benchmark
   - Regulated
   tags_raw:
   - Indices
