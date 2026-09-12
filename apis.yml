@@ -215,6 +215,8 @@ apis:
   - type: Overlay
     url: overlays/kaiko-supply-api-overlay.yaml
 common:
+  - type: Website
+    url: https://www.kaiko.com/
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/kaiko/overview
   - type: AgenticAccess
