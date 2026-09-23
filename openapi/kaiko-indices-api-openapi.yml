@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Kaiko Market Data REST Canton Oracle Indices API
+  title: Kaiko Market Data REST Indices API
   description: REST API for accessing Kaiko's institutional-grade digital-asset market data, including Canton oracle prices, reference rates, indices, index replication rates, and supply / market-cap data. All requests are authenticated with an X-Api-Key header carrying the client's Kaiko API key.
   version: 2.0.0
   termsOfService: https://www.kaiko.com/pages/terms-of-use
