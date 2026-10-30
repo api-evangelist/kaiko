@@ -1,4 +1,4 @@
-# Kaiko (kaiko)
+# Kaiko
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,119 +66,156 @@
 
 Kaiko is an institutional-grade crypto market data provider. Its product line spans Kaiko REST (historical and reference data), Kaiko Stream (real-time WebSocket and gRPC), Cloud Delivery (S3 and Snowflake direct shares), Kaiko On-chain, and Kaiko Indices (regulated benchmark indices). Authentication uses API keys; access is sales-led.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/kaiko/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/kaiko/refs/heads/main/apis.yml)
+**Areas:** Web3 · Cryptocurrency · Market Data · Institutional · Foreign Exchange · Indices · Onchain · Streaming
 
-## Tags
+## Kaiko on APIs.io
 
-- Web3
-- Crypto
-- Market Data
-- Institutional
-- FX
-- Indices
-- On-Chain
-- Streaming
+Everything profiled for Kaiko is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/kaiko/](https://apis.io/providers/kaiko/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (8)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-29
+- [Kaiko REST API](https://apis.io/apis/kaiko/rest-api/) — REST endpoints for trades, order books, OHLCV, market reference, trade flows, FX rates, and derivatives across 100+ exchanges. Historical depth back to…
+- [Kaiko Stream](https://apis.io/apis/kaiko/stream/) — Real-time crypto market data delivered over gRPC server-streaming. Feeds include tick-level trades, top-of-book (best bid/ask), level-2 order book updates,…
+- [Kaiko On-chain API](https://apis.io/apis/kaiko/on-chain-api/) — On-chain metrics including DEX trades, liquidity, lending markets, and MEV signals across major chains.
+- [Kaiko Indices](https://apis.io/apis/kaiko/indices/) — Regulated benchmark crypto indices designed for fund administrators and ETF/ETP issuers.
+- [Kaiko Canton Oracle API](https://apis.io/apis/kaiko/kaiko-canton-oracle-api/) — Canton oracle pricing endpoints.
+- [Kaiko Index Reference Data API](https://apis.io/apis/kaiko/kaiko-index-reference-data-api/) — Reference-rate data for Kaiko indices.
+- [Kaiko Indices API](https://apis.io/apis/kaiko/kaiko-indices-api/) — Index composition and replication data.
+- [Kaiko Supply API](https://apis.io/apis/kaiko/kaiko-supply-api/) — Asset supply and market-capitalization rankings.
 
-## APIs
+### Published properties
 
-### Kaiko REST API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-REST endpoints for trades, order books, OHLCV, market reference, trade flows, FX rates, and derivatives across 100+ exchanges. Historical depth back to 2014. Authentication via X-Api-Key header.
+#### MCP servers (1)
 
-- **Human URL:** [https://docs.kaiko.com/](https://docs.kaiko.com/)
-- **Base URL:** `https://us.market-api.kaiko.io/v2`
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [kaiko](https://apis.io/servers/kaiko/kaiko/)
 
-- Crypto
-- Market Data
-- Reference Data
-- Historical
-- Institutional
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
+- [Kaiko Agentic Access](https://apis.io/agentic-access/kaiko/kaiko-agentic-access/)
+
+#### Collections (9)
+
+Postman and Open Collection request collections.
+
+- [Kaiko Market Data REST API](https://apis.io/collections/kaiko/open-kaiko/)
+- [Kaiko Market Data REST Canton Oracle API](https://apis.io/collections/kaiko/open-kaiko-canton-oracle-api/)
+- [Kaiko Market Data REST Canton Oracle Index Reference Data API](https://apis.io/collections/kaiko/open-kaiko-index-reference-data-api/)
+- [Kaiko Market Data REST Canton Oracle Indices API](https://apis.io/collections/kaiko/open-kaiko-indices-api/)
+- [Kaiko Market Data REST Canton Oracle Supply API](https://apis.io/collections/kaiko/open-kaiko-supply-api/)
+- [Kaiko Market Data REST Canton Oracle API](https://apis.io/collections/kaiko/postman-kaiko-canton-oracle-api/)
+- [Kaiko Market Data REST Canton Oracle Index Reference Data API](https://apis.io/collections/kaiko/postman-kaiko-index-reference-data-api/)
+- [Kaiko Market Data REST Canton Oracle Indices API](https://apis.io/collections/kaiko/postman-kaiko-indices-api/)
+- [Kaiko Market Data REST Canton Oracle Supply API](https://apis.io/collections/kaiko/postman-kaiko-supply-api/)
+
+#### Overlays (4)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Kaiko Canton Oracle Api Overlay](https://apis.io/overlays/kaiko/kaiko-canton-oracle-api-overlay/)
+- [Kaiko Index Reference Data Api Overlay](https://apis.io/overlays/kaiko/kaiko-index-reference-data-api-overlay/)
+- [Kaiko Indices Api Overlay](https://apis.io/overlays/kaiko/kaiko-indices-api-overlay/)
+- [Kaiko Supply Api Overlay](https://apis.io/overlays/kaiko/kaiko-supply-api-overlay/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Kaiko Authentication](https://apis.io/security/kaiko/kaiko-authentication/)
+- [Kaiko Domain Security](https://apis.io/security/kaiko/kaiko-domain-security/)
+- [Kaiko Trust Center](https://apis.io/security/kaiko/kaiko-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Kaiko Plans Pricing](https://apis.io/plans/kaiko/kaiko-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Kaiko Rate Limits](https://apis.io/rate-limits/kaiko/kaiko-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Kaiko Finops](https://apis.io/finops/kaiko/kaiko-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.kaiko.com/)
 - [Documentation](https://docs.kaiko.com/)
-- [Postman Collection](collections/kaiko.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kaiko.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Getting started](https://docs.kaiko.com/rest-api/general/getting-started)
+- [API reference](https://docs.kaiko.com/rest-api/general/introduction)
+- [Pricing](https://www.kaiko.com/about-kaiko/pricing-and-contracts)
+- [Support](https://www.kaiko.com/contact-kaiko)
+- [Blog](https://www.kaiko.com/resources/categories/data-blog)
+- [Compliance](https://www.kaiko.com/compliance)
+- [Terms of service](https://www.kaiko.com/terms)
+- [Privacy policy](https://marketing.kaiko.com/hubfs/Website%20documents/Kaiko%20-%20Privacy%20Policy%20(v.1.0).pdf)
+- [GitHub](https://github.com/kaikodata)
+- [Status](https://status.kaiko.com/)
 
-### Kaiko Stream
+## API Evangelist rating
 
-Real-time crypto market data delivered over gRPC server-streaming. Feeds include tick-level trades, top-of-book (best bid/ask), level-2 order book updates, level-1 aggregations (OHLCV, VWAP), derivatives reference data, and analytics (Best Execution, Fair Market Value, Derivatives Risk Indicators). Transport is gRPC only; Kaiko does not publish a WebSocket interface (see review.yml).
+**Kin Score 50.9** — developing · rubric 0.25.0 · scored 2026-10-23
 
-- **Human URL:** [https://docs.kaiko.com/stream/general/introduction](https://docs.kaiko.com/stream/general/introduction)
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 49.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 31.6 |
+| Developer ergonomics | 67.3 |
+| Access clarity | 52.6 |
 
-#### Tags
+**Agent readiness 26.9** — agent-aware
 
-- Streaming
-- Real-time
-- gRPC
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
 
-#### Properties
+**Regulatory alignment 33.3** — Securities & Market Data
 
-- [Documentation](https://docs.kaiko.com/stream/general/introduction)
-- [SDK](https://github.com/kaikodata/kaiko-sdk-examples)
-- [Review](review.yml)
-- [Postman Collection](collections/kaiko.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kaiko.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/kaiko/](https://apis.io/providers/kaiko/).
 
-### Kaiko On-chain API
+## How this profile is made
 
-On-chain metrics including DEX trades, liquidity, lending markets, and MEV signals across major chains.
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- **Human URL:** [https://docs.kaiko.com/onchain/overview](https://docs.kaiko.com/onchain/overview)
-- **Base URL:** `https://us.market-api.kaiko.io/v2/data/onchain`
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Kaiko: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-#### Tags
+## Open an issue
 
-- On-Chain
-- DEX
-- Liquidity
-- Multi-chain
-
-#### Properties
-
-- [Documentation](https://docs.kaiko.com/onchain/overview)
-- [Postman Collection](collections/kaiko.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kaiko.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Kaiko Indices
-
-Regulated benchmark crypto indices designed for fund administrators and ETF/ETP issuers.
-
-- **Human URL:** [https://www.kaiko.com/products/indices](https://www.kaiko.com/products/indices)
-- **Base URL:** `https://us.market-api.kaiko.io/v2/data/index.v1`
-
-#### Tags
-
-- Indices
-- Benchmark
-- Regulated
-
-#### Properties
-
-- [Documentation](https://www.kaiko.com/products/indices)
-- [Postman Collection](collections/kaiko.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kaiko.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/kaikodata)
-- [LinkedIn](https://www.linkedin.com/company/kaikodata)
-- [Portal](https://www.kaiko.com/)
-- [Documentation](https://docs.kaiko.com/)
-- [Plans](plans/kaiko-plans-pricing.yml)
-- [Rate Limits](rate-limits/kaiko-rate-limits.yml)
-- [Fin Ops](finops/kaiko-finops.yml)
-- [L L Ms Txt](https://docs.kaiko.com/llms.txt)
-- [Review](review.yml)
-
-## Maintainers
-
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/kaiko/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
